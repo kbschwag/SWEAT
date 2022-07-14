@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %}Level 1 Workouts{% endblock %}
+{% block content%}
+
+
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SIP</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Importing fonts -->
+    <!-- Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400i|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
+
+    <!-- Importing CSSs -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/owl-carousel/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/magnific-popup/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+
+
+</head>
+
+<body id="body">
+    <div id="workout">
+    <h1>Level 3 - High Intensity Workout</h1>
+    <h3>We reccommened getting a workout in, when your body feels good and you've had appropriate recovery you can run, play sports, workout or get a high intensity workout</h3>
+    <p>How does exercise prevent injury?
+Strength training is often recommended when it comes to preventing injury due to the fact that it involves a range of movement throughout the muscles. This helps to strengthen them and increase muscle mass, which in turn leads to them becoming less easily injured.(Recoverfit.co)</p>
+    </div>
+    <div id="videos">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bLdrCTponaE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</body>
+
+</html>
+{% endblock %}
