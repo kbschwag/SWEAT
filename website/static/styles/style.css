@@ -8,7 +8,7 @@ body {
   color: #F0F7F4;
   font-family: "Josefin Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
-    background-color: #32292F;
+   background-color: #32292F;
 }
 
 h1,
@@ -101,6 +101,7 @@ a:active {
   text-decoration: none;
 }
 
+
 .section {
   padding: 100px 0;
 }
@@ -150,6 +151,22 @@ a:active {
   font-size: 17px;
   line-height: 24px;
   font-weight: 300;
+}
+
+section.home-banner {
+    height: 101vh;
+    width: 100%;
+     z-index:-1;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://peakviewbh.com/wp-content/uploads/2021/12/Get-Your-Head-in-the-Game-Athletes-Mental-Health.jpg");
+}
+
+section.home-banner {
+    background-attachment: scroll;
 }
 
 .subheading {
