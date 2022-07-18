@@ -5,10 +5,10 @@ body {
   font-size: 14px;
   font-weight: 300;
   line-height: 25px;
-  color: #3b4045;
+  color: #F0F7F4;
   font-family: "Josefin Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
-
+    background-color: #32292F;
 }
 
 h1,
@@ -350,11 +350,19 @@ a:active {
 }
 
 /* navigation */
+
+.navbar{
+position: fixed;
+background-color: #32292F;
+width: 100%;
+}
+
 .navbar-brand {
-  color: #444;
+  color: #F0F7F4;
   font-size: 25px;
   margin: 0;
   line-height: 1;
+  background-color: #32292F;
 }
 
 .nav-link {
@@ -363,11 +371,14 @@ a:active {
 }
 
 .nav-item:hover {
-  background-color: #f9a743;
+  background-color: #70ABAF;
 }
 
+
+
 .navbar-light .navbar-nav .nav-link {
-  color: #444;
+  color: #F0F7F4;
+
 }
 
 /*--
@@ -426,7 +437,7 @@ a:active {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background: #f9a743;
+  background: #70ABAF;
   padding: 5px 10px;
   border-radius: 40px;
   width: 50px;
@@ -451,7 +462,7 @@ a:active {
   font-size: 40px;
   display: inline-block;
   margin-bottom: 20px;
-  color: #f9a743;
+  color: #70ABAF;
 }
 
 .testimonials .testimonial-block p {
@@ -710,7 +721,7 @@ tr:nth-child(even) {
 }
 
 .map {
-  background-color: #f9a743;
+  background-color: #70ABAF;
   height: auto;
   margin-top: 60px;
   text-align: center;
@@ -734,7 +745,7 @@ tr:nth-child(even) {
   grid-template-columns: auto auto auto;
   grid-gap: 10px;
   padding: 10px;
-  background-color: #f9a743;
+  background-color: #70ABAF;
 }
 
 .box-area2{
@@ -779,7 +790,7 @@ tr:nth-child(even) {
   margin-top: 50px;
     height: 40vh;
   text-decoration: none;
-  background-color: #f9a743;
+  background-color: #70ABAF;
 }
 
 .img-area {

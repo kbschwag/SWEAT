@@ -14,9 +14,10 @@ body {
   font-size: 14px;
   font-weight: 300;
   line-height: 25px;
-  color: #3b4045;
+  color: #F0F7F4;
   font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
+  background-color: #32292F;
 }
 
 h1,
@@ -179,7 +180,7 @@ a:active {
   font-size: 18px;
   padding: 15px 40px;
   display: inline-block;
-  background-color: #f9a743;
+  background-color: #32292F;
   box-shadow: 0 15px 40px rgba(249, 167, 68, 0.5);
   background-image: linear-gradient(bottom, rgba(255, 239, 206, 0) 0%, rgba(255, 239, 206, 0.25) 100%);
 
@@ -199,7 +200,7 @@ a:active {
 
 /*Preloader*/
 #preloader-wrapper {
-  background-color: #fff;
+  background-color: #32292F;
   bottom: auto;
   height: 100%;
   left: auto;
