@@ -11,26 +11,15 @@ views = Blueprint("views", __name__)
 def home():
     return render_template("home.html", user=current_user)
 
-@views.route("/questions")
+@views.route("/about_us")
 
-def questions():
-    return render_template("questions.html", user=current_user)
+def about():
+    return render_template("about_us.html", user=current_user)
 
-@views.route("/level1")
+@views.route("/community_guidelines")
 
-def level1():
-    return render_template("level1.html", user=current_user)
-
-@views.route("/level2")
-
-def level2():
-    return render_template("level2.html", user=current_user)
-
-@views.route("/level3")
-
-def level3():
-    return render_template("level3.html", user=current_user)
-
+def community_guidelines():
+    return render_template("community_guidelines.html", user=current_user)
 
 
 @views.route("/view_posts/", methods = ["GET"])

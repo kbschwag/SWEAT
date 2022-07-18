@@ -8,7 +8,11 @@ body {
   color: #F0F7F4;
   font-family: "Josefin Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
-   background-color: #32292F;
+   background-color: #000;
+}
+
+div {
+    display: block;
 }
 
 h1,
@@ -155,9 +159,9 @@ a:active {
 
 section.home-banner {
     height: 101vh;
-    width: 100%;
      z-index:-1;
     position: relative;
+    background-attachment: fixed;
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
@@ -167,6 +171,20 @@ section.home-banner {
 
 section.home-banner {
     background-attachment: scroll;
+}
+
+.banner-content {
+    padding: 48px 0;
+}
+
+.home-banner-inner {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding-top: 70px;
+    transform: translateY(-50%);
 }
 
 .subheading {
@@ -192,13 +210,11 @@ section.home-banner {
   font-size: 18px;
   padding: 15px 40px;
   display: inline-block;
-  background-color: #f9a743;
-  box-shadow: 0 15px 40px rgba(249, 167, 68, 0.5);
-  background-image: linear-gradient(bottom, rgba(255, 239, 206, 0) 0%, rgba(255, 239, 206, 0.25) 100%);
+  box-shadow: 0 15px 40px;
+  background-color: #70ABAF;
 }
 
 .btn-main:hover, .btn-main:focus {
-  background-color: #f9a743;
   color: #fff;
   transform: scale(1.2);
 }
@@ -370,7 +386,7 @@ section.home-banner {
 
 .navbar{
 position: fixed;
-background-color: #32292F;
+background-color: #000;
 width: 100%;
 }
 
@@ -391,19 +407,29 @@ width: 100%;
   background-color: #70ABAF;
 }
 
-
-
 .navbar-light .navbar-nav .nav-link {
   color: #F0F7F4;
 
+}
+/*--
+    more
+--*/
+.home-cmn-sec {
+    height: 100vh;
+    margin-top: 100px;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(#F0F7F4, #99E1D9);
+    display: block;
+    border-radius: 40px;
 }
 
 /*--
     feature start
 --*/
-/*--
-    Feature-list start
---*/
+
 .feature-list .btn-main {
   margin-top: 15px;
 }
@@ -468,40 +494,7 @@ width: 100%;
   display: inline-block;
 }
 
-/*--
-    service start
---*/
-.testimonials .testimonial-block {
-  padding: 0 10px;
-}
 
-.testimonials .testimonial-block i {
-  font-size: 40px;
-  display: inline-block;
-  margin-bottom: 20px;
-  color: #70ABAF;
-}
-
-.testimonials .testimonial-block p {
-  font-family: "Droid Serif", serif;
-  font-size: 14px;
-  color: #777;
-}
-
-.testimonials .testimonial-block .author-details {
-  margin-top: 30px;
-}
-
-.testimonials .testimonial-block .author-details img {
-  border-radius: 50%;
-  width: 50px;
-}
-
-.testimonials .testimonial-block .author-details h4 {
-  font-weight: 700;
-  font-size: 20px;
-  margin-top: 10px;
-}
 
 /*--
     call-to-action start
