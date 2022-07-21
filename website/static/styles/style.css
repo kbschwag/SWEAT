@@ -1,6 +1,12 @@
 /*--
     Common Css
 --*/
+Black: #32292F
+Blue1: #99E1D9
+Blue2: #70ABAF
+White: #F0F7F4
+Gold: #A58C50
+
 body {
   font-size: 14px;
   font-weight: 300;
@@ -862,6 +868,9 @@ tr:nth-child(even) {
 
 .l-footer layout_compact {
     display: block;
+    position:fixed;
+    bottom:0;
+    left:0;
 }
 
 .l-footer.layout_compact{
