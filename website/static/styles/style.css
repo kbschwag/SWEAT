@@ -869,14 +869,11 @@ tr:nth-child(even) {
     box-sizing: border-box;
 }
 
-.l-footer layout_compact {
-    display: block;
-    position:fixed;
-    bottom:0;
-    left:0;
-}
 
 .l-footer.layout_compact{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
     font-size: 0.9em;
     line-height: 20px;
     text-align: center;
