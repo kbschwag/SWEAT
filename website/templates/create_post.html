@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %}
 {% block content%}
 <!-- Created a form which takes the input from the user -->
-
+import $ from "jquery";
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,19 +22,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/magnific-popup/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
     <script src="{{url_for('static', filename='main.js')}}"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
-        var btn = document.getElementById('btnAdd');
-btn.onclick = function(){
-    var tb = document.getElementById('option'), val = tb.value;
-    if(val.length){
-        var sel = document.getElementById('sel');
-        var opt = document.createElement('option');
-        opt.value = val;
-        opt.innerHTML = val;
-        sel.appendChild(opt);
-        tb.value = '';
-    }
-};
+       $(".js-example-tags").select2({
+  tags: true
+});
+
 
     </script>
 
@@ -63,11 +56,94 @@ btn.onclick = function(){
         </select>
         <br><br>
 
-        <select id="sel" name="sel">
-            <option value='none'>None</option>
+        <select class="form-control">
+            <option selected="selected">orange</option>
+            <option>white</option>
+            <option>purple</option>
         </select>
-        <input type='text' name='option' id='option'/>
-        <button id='btnAdd'>Add Option</button>
+
+        </button>
+
+        <HTML xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <meta http-equiv="Content-Type" content="text/HTML; charset=iso-8859-1"/>
+            <title>Add Option Items </title>
+            <script type="text/javaScript">
+function addNewListItem(){
+var htmlSelect=document.getElementById('selectYear');
+var optionValue=document.getElementById('txtYearValue');
+var optionDisplaytext=document.getElementById('txtYearDisplayValue');
+
+if(optionValue.value==''||isNaN(optionValue.value)){
+alert('please enter option value');
+optionValue.focus();
+return false;
+}
+if(optionDisplaytext.value==''||isNaN(optionDisplaytext.value)){
+alert('please enter option display text');
+optionDisplaytext.focus();
+return false;
+}
+if(isOptionAlreadyExist(htmlSelect,optionValue.value)){
+alert('Option value already exists');
+optionValue.focus();
+return false;
+}
+if(isOptionAlreadyExist(htmlSelect,optionDisplaytext.value)){
+alert('Display text already exists');
+optionDisplaytext.focus();
+return false;
+}
+var selectBoxOption = document.createElement("option");
+selectBoxOption.value = optionValue.value;
+selectBoxOption.text = optionDisplaytext.value;
+htmlSelect.add(selectBoxOption, null);
+alert("Option has been added successfully");
+return true;
+
+}
+function isOptionAlreadyExist(listBox,value){
+var exists=false;
+for(var x=0;x<listBox.options.length;x++){
+if(listBox.options[x].value==value || listBox.options[x].text==value){
+exists=true;
+break;
+}
+}
+return exists;
+}
+
+            </script>
+        </head>
+
+        <body>
+        <table border="0" align="left">
+            <tr>
+                <td align="right">Year</td>
+                <td align="left"><select name="selectYear" id="selectYear">
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td align="right">Option Value</td>
+                <td align="left"><input name="txtYearValue" type="text" id="txtYearValue"/></td>
+            </tr>
+            <tr>
+                <td align="right">Option Display Text</td>
+                <td align="left"><input name="txtYearDisplayValue" type="text" id="txtYearDisplayValue"/></td>
+            </tr>
+            <tr>
+                <td align="right">&nbsp;</td>
+                <td align="left"><input name="btnAddItem" type="button" id="btnAddItem" value="Add Option"
+                                        onclick="javaScript:addNewListItem();"/></td>
+            </tr>
+        </table>
+        </body>
+        </HTML>
 
         <!--- Submit Button -->
         <div align="center">
@@ -86,3 +162,4 @@ btn.onclick = function(){
 
 </form>
 <{% endblock %}
+
