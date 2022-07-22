@@ -872,7 +872,7 @@ tr:nth-child(even) {
 
 .l-footer.layout_compact{
     bottom: 0;
-    position: absolute;
+    position: relative;
     width: 100%;
     font-size: 0.9em;
     line-height: 20px;
