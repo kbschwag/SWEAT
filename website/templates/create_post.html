@@ -22,6 +22,21 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/magnific-popup/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
     <script src="{{url_for('static', filename='main.js')}}"></script>
+    <script>
+        var btn = document.getElementById('btnAdd');
+btn.onclick = function(){
+    var tb = document.getElementById('option'), val = tb.value;
+    if(val.length){
+        var sel = document.getElementById('sel');
+        var opt = document.createElement('option');
+        opt.value = val;
+        opt.innerHTML = val;
+        sel.appendChild(opt);
+        tb.value = '';
+    }
+};
+
+    </script>
 
 </head>
 
@@ -46,6 +61,12 @@
             <option value="Senior">Senior</option>
         </select>
         <br><br>
+
+        <select id="sel" name="sel">
+            <option value='none'>None</option>
+        </select>
+        <input type='text' name='option' id='option'/>
+        <button id='btnAdd'>Add Option</button>
 
         <!--- Submit Button -->
         <div align="center">
