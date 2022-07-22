@@ -1,4 +1,3 @@
-
 {% extends "base.html" %} {% block title %}Home{% endblock %}
 {% block content%}
 <!-- Created a form which takes the input from the user -->
@@ -12,7 +11,8 @@
 
     <!-- Importing fonts -->
     <!-- Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400i|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400i|Source+Sans+Pro:300,400,600,700"
+          rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
 
@@ -28,20 +28,39 @@
 
 <h1 align="center"> Fill out the form </h1>
 <form method='POST'>
-    <!--- Question 1:The hydration level  -->
-    <h4 align="center"> Feel free to rant, write what's on your mind, or tell your story and how you've been affected to the world. Let's come together to talk about the struggles as a student athlete and talk about mental health </h4>
-    <textarea name ="text" id ="text" class ="form-control"></textarea>
-    <br />
 
-    <!--- Submit Button -->
-    <div align = "center">
-      <button type = "submit" class="btn btn-lg btn-primary">SUBMIT</button>
-    </div>
-    <br />
+
+    <form action="/action_page.php">
+        <!--- Question 1  -->
+        <h4 align="center"> Feel free to rant, write what's on your mind, or tell your story and how you've been
+            affected to the world. Let's come together to talk about the struggles as a student athlete and talk about
+            mental health </h4>
+        <textarea name="text" id="text" class="form-control"></textarea>
+        <br/>
+
+        <h4 for="categ" align="center">Choose a category for your post:</h4>
+        <select name="categ" id="categ" class="form-control">
+            <option value="Freshman">Freshman</option>
+            <option value="Sophomore">Sophomore</option>
+            <option value="Junior">Junior</option>
+            <option value="Senior">Senior</option>
+        </select>
+        <br><br>
+
+        <!--- Submit Button -->
+        <div align="center">
+            <button type="submit" class="btn btn-lg btn-primary">SUBMIT</button>
+        </div>
+        <br/>
+    </form>
+
+
     <!--- back button -->
-    <div align = "center">
-        <a href="/view_posts"><button type = "button" class="btn btn-lg btn-secondary">Back</button></a>
+    <div align="center">
+        <a href="/view_posts">
+            <button type="button" class="btn btn-lg btn-secondary">Back</button>
+        </a>
     </div>
 
 </form>
-    <{% endblock %}
+<{% endblock %}

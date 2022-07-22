@@ -35,11 +35,12 @@ def view_posts():
 def create_post():
     if request.method == "POST":
         text = request.form.get('text')
+        categ = request.form.get('categ')
 
         if not text:
             flash('Enter the details', category='error')
         else:
-            post = Post(text=text,author=current_user.id)
+            post = Post(text=text,categ=categ,author=current_user.id)
             db.session.add(post)
             db.session.commit()
             flash('The data is submitted', category='success')
