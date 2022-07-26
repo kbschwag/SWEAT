@@ -22,24 +22,16 @@ import $ from "jquery";
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/magnific-popup/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
     <script src="{{url_for('static', filename='main.js')}}"></script>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script>
-       $(".js-example-tags").select2({
-  tags: true
-});
-
-
-    </script>
 
 </head>
 
 <form method='POST'>
 
     <div class="heading">
-                        <h2>Create a Post</h2>
+        <h2>Create a Post</h2>
     </div>
 
-        <form action="/action_page.php">
+    <form action="/action_page.php">
         <!--- Question 1  -->
         <h4 align="center"> Feel free to rant, write what's on your mind, or tell your story and how you've been
             affected to the world. Let's come together to talk about the struggles as a student athlete and talk about
@@ -47,20 +39,6 @@ import $ from "jquery";
         <textarea name="text" id="text" class="form-control"></textarea>
         <br/>
 
-        <h4 for="categ" align="center">Choose a category for your post:</h4>
-        <select name="categ" id="categ" class="form-control">
-            <option value="Freshman">Freshman</option>
-            <option value="Sophomore">Sophomore</option>
-            <option value="Junior">Junior</option>
-            <option value="Senior">Senior</option>
-        </select>
-        <br><br>
-
-        <select class="form-control">
-            <option selected="selected">orange</option>
-            <option>white</option>
-            <option>purple</option>
-        </select>
 
         </button>
 
@@ -113,6 +91,13 @@ break;
 return exists;
 }
 
+
+
+
+
+
+
+
             </script>
         </head>
 
@@ -144,6 +129,109 @@ return exists;
         </table>
         </body>
         </HTML>
+
+        <HTML>
+        <head>
+            <script>
+window.onload = function () {
+    var select = document.getElementById("year");
+    var name = prompt("What is your name?");
+    for(var i = 2019; i >= 1900; --i) {
+        var option = document.createElement('option');
+        option.text = option.value = i;
+        select.add(option, 0);
+    }
+};
+
+
+
+
+
+
+            </script>
+        </head>
+
+        <body>
+
+        <select id="year" name="year"></select>
+
+        </body>
+        </HTML>
+
+        <HTML>
+        <select id="sel" name="sel">
+            <option value='none'>None</option>
+        </select>
+        <input type='text' name='option' id='option'/>
+        <button id='btnAdd'>Add Option</button>
+        </HTML>
+
+        <script>
+            var btn = document.getElementById('btnAdd');
+btn.onclick = function(){
+    var tb = document.getElementById('option'), val = tb.value;
+    if(val.length){
+        var sel = document.getElementById('sel');
+        var opt = document.createElement('option');
+        opt.value = val;
+        opt.innerHTML = val;
+        sel.appendChild(opt);
+        tb.value = '';
+    }
+};
+
+
+
+
+        </script>
+
+
+        <html>
+        <body>
+
+        <h1>The datalist element</h1>
+
+        <form action="/action_page.php" method="get">
+            <label for="browser">Choose your browser from the list:</label>
+            <input list="browsers" name="browser" id="browser">
+            <datalist id="browsers">
+                <option value="Edge">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+            <input type="submit">
+        </form>
+
+        <p><strong>Note:</strong> The datalist tag is not supported in Safari 12.0 (or earlier).</p>
+
+        </body>
+        </html>
+        <HTML>
+        <select>
+            const select = document.querySelector('select')
+            const arr = ['apple', 'orange', 'grape']
+            for (const [index, a] of arr.entries()) {
+            const opt = document.createElement('option');
+            opt.value = index;
+            opt.innerHTML = a;
+            select.appendChild(opt);
+            }
+        </select>
+        <HTML/>
+
+        <HTML>
+        <select id="usr-slct">
+            var selector = document.getElementById("usr-slct");
+            var newoption = document.createElement("option");
+
+            newoption.textContent = "User1";
+            selector.add(newoption);
+        </select>
+        </HTML>
+
+
 
         <!--- Submit Button -->
         <div align="center">
