@@ -30,111 +30,115 @@ import $ from "jquery";
     <div class="heading">
         <h2>Create a Post</h2>
     </div>
-
+    <br/>
     <form action="/action_page.php">
         <!--- Question 1  -->
         <h4 align="center"> Feel free to rant, write what's on your mind, or tell your story and how you've been
             affected to the world. Let's come together to talk about the struggles as a student athlete and talk about
             mental health </h4>
+        <br/>
         <textarea name="text" id="text" class="form-control"></textarea>
         <br/>
 
+        <!--
+                </button>
 
-        </button>
+                <HTML xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta http-equiv="Content-Type" content="text/HTML; charset=iso-8859-1"/>
+                    <title>Add Option Items </title>
+                    <script type="text/javaScript">
+        function addNewListItem(){
+        var htmlSelect=document.getElementById('selectYear');
+        var optionValue=document.getElementById('txtYearValue');
+        var optionDisplaytext=document.getElementById('txtYearDisplayValue');
 
-        <HTML xmlns="http://www.w3.org/1999/xhtml">
-        <head>
-            <meta http-equiv="Content-Type" content="text/HTML; charset=iso-8859-1"/>
-            <title>Add Option Items </title>
-            <script type="text/javaScript">
-function addNewListItem(){
-var htmlSelect=document.getElementById('selectYear');
-var optionValue=document.getElementById('txtYearValue');
-var optionDisplaytext=document.getElementById('txtYearDisplayValue');
+        if(optionValue.value==''||isNaN(optionValue.value)){
+        alert('please enter option value');
+        optionValue.focus();
+        return false;
+        }
+        if(optionDisplaytext.value==''||isNaN(optionDisplaytext.value)){
+        alert('please enter option display text');
+        optionDisplaytext.focus();
+        return false;
+        }
+        if(isOptionAlreadyExist(htmlSelect,optionValue.value)){
+        alert('Option value already exists');
+        optionValue.focus();
+        return false;
+        }
+        if(isOptionAlreadyExist(htmlSelect,optionDisplaytext.value)){
+        alert('Display text already exists');
+        optionDisplaytext.focus();
+        return false;
+        }
+        var selectBoxOption = document.createElement("option");
+        selectBoxOption.value = optionValue.value;
+        selectBoxOption.text = optionDisplaytext.value;
+        htmlSelect.add(selectBoxOption, null);
+        alert("Option has been added successfully");
+        return true;
 
-if(optionValue.value==''||isNaN(optionValue.value)){
-alert('please enter option value');
-optionValue.focus();
-return false;
-}
-if(optionDisplaytext.value==''||isNaN(optionDisplaytext.value)){
-alert('please enter option display text');
-optionDisplaytext.focus();
-return false;
-}
-if(isOptionAlreadyExist(htmlSelect,optionValue.value)){
-alert('Option value already exists');
-optionValue.focus();
-return false;
-}
-if(isOptionAlreadyExist(htmlSelect,optionDisplaytext.value)){
-alert('Display text already exists');
-optionDisplaytext.focus();
-return false;
-}
-var selectBoxOption = document.createElement("option");
-selectBoxOption.value = optionValue.value;
-selectBoxOption.text = optionDisplaytext.value;
-htmlSelect.add(selectBoxOption, null);
-alert("Option has been added successfully");
-return true;
-
-}
-function isOptionAlreadyExist(listBox,value){
-var exists=false;
-for(var x=0;x<listBox.options.length;x++){
-if(listBox.options[x].value==value || listBox.options[x].text==value){
-exists=true;
-break;
-}
-}
-return exists;
-}
-
-
+        }
+        function isOptionAlreadyExist(listBox,value){
+        var exists=false;
+        for(var x=0;x<listBox.options.length;x++){
+        if(listBox.options[x].value==value || listBox.options[x].text==value){
+        exists=true;
+        break;
+        }
+        }
+        return exists;
+        }
 
 
 
 
 
 
-            </script>
-        </head>
 
-        <body>
-        <table border="0" align="left">
-            <tr>
-                <td align="right">Year</td>
-                <td align="left"><select name="selectYear" id="selectYear">
-                    <option value="2000">2000</option>
-                    <option value="2001">2001</option>
-                    <option value="2002">2002</option>
-                    <option value="2003">2003</option>
-                    <option value="2004">2004</option>
-                </select></td>
-            </tr>
-            <tr>
-                <td align="right">Option Value</td>
-                <td align="left"><input name="txtYearValue" type="text" id="txtYearValue"/></td>
-            </tr>
-            <tr>
-                <td align="right">Option Display Text</td>
-                <td align="left"><input name="txtYearDisplayValue" type="text" id="txtYearDisplayValue"/></td>
-            </tr>
-            <tr>
-                <td align="right">&nbsp;</td>
-                <td align="left"><input name="btnAddItem" type="button" id="btnAddItem" value="Add Option"
-                                        onclick="javaScript:addNewListItem();"/></td>
-            </tr>
-        </table>
-        </body>
-        </HTML>
+
+                    </script>
+                </head>
+                -->
+        <!--
+
+                <body>
+                <table border="0" align="left">
+                    <tr>
+                        <td align="right">Year</td>
+                        <td align="left"><select name="selectYear" id="selectYear">
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Option Value</td>
+                        <td align="left"><input name="txtYearValue" type="text" id="txtYearValue"/></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Option Display Text</td>
+                        <td align="left"><input name="txtYearDisplayValue" type="text" id="txtYearDisplayValue"/></td>
+                    </tr>
+                    <tr>
+                        <td align="right">&nbsp;</td>
+                        <td align="left"><input name="btnAddItem" type="button" id="btnAddItem" value="Add Option"
+                                                onclick="javaScript:addNewListItem();"/></td>
+                    </tr>
+                </table>
+                </body>
+                </HTML>
+        -->
 
         <HTML>
         <head>
             <script>
 window.onload = function () {
-    var select = document.getElementById("year");
+    var select = document.getElementById("categ");
     var name = prompt("What is your name?");
     for(var i = 2019; i >= 1900; --i) {
         var option = document.createElement('option');
@@ -148,23 +152,24 @@ window.onload = function () {
 
 
 
+
             </script>
         </head>
 
         <body>
 
-        <select id="year" name="year"></select>
+        <select id="categ" name="categ"></select>
 
         </body>
         </HTML>
 
-        <HTML>
+        <!--<HTML>
         <select id="sel" name="sel">
             <option value='none'>None</option>
         </select>
         <input type='text' name='option' id='option'/>
         <button id='btnAdd'>Add Option</button>
-        </HTML>
+        </HTML>-->
 
         <script>
             var btn = document.getElementById('btnAdd');
@@ -183,6 +188,7 @@ btn.onclick = function(){
 
 
 
+
         </script>
 
 
@@ -192,14 +198,14 @@ btn.onclick = function(){
         <h1>The datalist element</h1>
 
         <form action="/action_page.php" method="get">
-            <label for="browser">Choose your browser from the list:</label>
+            <label for="browser">Choose your post's category from the list:</label>
             <input list="browsers" name="browser" id="browser">
             <datalist id="browsers">
-                <option value="Edge">
-                <option value="Firefox">
-                <option value="Chrome">
-                <option value="Opera">
-                <option value="Safari">
+                <option value="Freshman">
+                <option value="Sophomore">
+                <option value="Junior">
+                <option value="Senior">
+                <option value="High School">
             </datalist>
             <input type="submit">
         </form>
@@ -208,29 +214,28 @@ btn.onclick = function(){
 
         </body>
         </html>
-        <HTML>
-        <select>
-            const select = document.querySelector('select')
-            const arr = ['apple', 'orange', 'grape']
-            for (const [index, a] of arr.entries()) {
-            const opt = document.createElement('option');
-            opt.value = index;
-            opt.innerHTML = a;
-            select.appendChild(opt);
-            }
-        </select>
-        <HTML/>
+        <!-- <HTML>
+         <select>
+             const select = document.querySelector('select')
+             const arr = ['apple', 'orange', 'grape']
+             for (const [index, a] of arr.entries()) {
+             const opt = document.createElement('option');
+             opt.value = index;
+             opt.innerHTML = a;
+             select.appendChild(opt);
+             }
+         </select>
+         <HTML/>-->
 
-        <HTML>
-        <select id="usr-slct">
-            var selector = document.getElementById("usr-slct");
-            var newoption = document.createElement("option");
+        <!--        <HTML>
+                <select id="usr-slct">
+                    var selector = document.getElementById("usr-slct");
+                    var newoption = document.createElement("option");
 
-            newoption.textContent = "User1";
-            selector.add(newoption);
-        </select>
-        </HTML>
-
+                    newoption.textContent = "User1";
+                    selector.add(newoption);
+                </select>
+                </HTML>-->
 
 
         <!--- Submit Button -->
