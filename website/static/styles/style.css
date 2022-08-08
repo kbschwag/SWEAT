@@ -89,23 +89,9 @@ color: black;
   margin-top: 100px;
 }
 
-.bg-1 {
-  background-image: url(../images/call-to-action.jpg);
-}
+#posts {
 
-
-.bg-opacity {
-  position: relative;
-}
-
-.bg-opacity:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+    padding-bottom: 1000px;
 }
 
 a:focus,
@@ -241,6 +227,52 @@ section.home-banner {
   font-weight: bold;
 }
 
+.heartid {
+    float: right;
+	cursor:pointer;
+	background:transparent;
+	border:0;
+	outline: none;
+	position: relative;
+}
+
+#heart {
+  position: relative;
+  width: 33px;
+  height: 30px;
+
+}
+
+#heart::before, #heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 17px;
+  height: 27px;
+  border-radius: 50px 50px 0 0;
+  background: #A9A9A9;
+}
+
+#heart::before {
+  left: 17px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+#heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+#heart:hover {
+    transform: scale(1.2);
+}
+
+#heart``:focus {
+    background-color: red;
+}
+
 /*Preloader*/
 #preloader-wrapper {
   background-color: #fff;
@@ -264,7 +296,6 @@ section.home-banner {
   border-radius: 50%;
   animation: loading 6s infinite reverse linear;
   position: relative;
-  font-family: "themefisher-font" !important;
 }
 
 .pre-loader:before {
