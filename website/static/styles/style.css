@@ -142,11 +142,11 @@ a:active {
 .heading {
   text-align: center;
   color: #A58C50;
-  padding-bottom: 50px;
+  padding-bottom: 25px;
 }
 
 .heading h2 {
-  padding-bottom: 15px;
+
   text-transform: capitalize;
   font-weight: 700;
   font-size: 40px;
@@ -751,13 +751,28 @@ footer p.copyright-text a:hover {
 }
 
 form {
-  display: grid;
-  grid-row: 2 / auto;
-  grid-template-columns: auto;
-  grid-gap: 0.75rem;
-  width: 50%;
+
   margin-left: auto;
-    margin-right: auto;
+   margin-right: auto;
+   width: 100%;
+}
+
+.form-control {
+    height: 30vh;
+    margin: 30px;
+}
+
+#browser {
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.datalist {
+    padding-bottom: 50px;
+}
+
+.part1 {
+    background-color:red;
 }
 
 #form-box {
