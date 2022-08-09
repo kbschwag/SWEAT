@@ -70,3 +70,13 @@ def posts(username):
         return redirect(url_for('views.view_posts'))
     posts=Post.query.filter_by(author=user.id).all()
     return render_template("posts.html", user=current_user, posts=posts, username=username)
+
+@views.route("/create-comment/<post_id>", methods=['POST'])
+@login_required
+def create_comment(post_id):
+    text = request.form.get('text')
+
+    if not text:
+        flash('Comment box cannot be empty', category='error')
+    else:
+        return redirct(url_for('views.home'))

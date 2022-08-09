@@ -535,9 +535,11 @@ z-index: 100;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
-
-form {
-    height: 90vh;
+#text {
+    border-style:solid;
+    border-width:thin;
+    font-size:18px;
+    padding:15px 40px;
 }
 
 .gallery .gallery-overlay .gallery-popup {
