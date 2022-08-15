@@ -227,6 +227,14 @@ section.home-banner {
   font-weight: bold;
 }
 
+.ul a {
+  text-decoration:none;
+  font-size:25px;
+}
+.likelen{
+    color: #000;
+}
+
 .heartid {
     float: right;
 	cursor:pointer;
@@ -269,7 +277,7 @@ section.home-banner {
     transform: scale(1.2);
 }
 
-#heart``:focus {
+#heart:focus {
     background-color: red;
 }
 

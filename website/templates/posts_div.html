@@ -1,20 +1,47 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %}
+<head>
+    <script src="https://kit.fontawesome.com/6b02633b51.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+</head>
 <h1 align="center">{% block header %}Posts{% endblock %}</h1>
 <div id="posts">
     {% for post in posts %}
     <div class="card border-dark">
         <div class="card-header d-flex justify-content-between align-items-center">
             <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
-            {% if user.id == post.author %}
-            <div class="" btn-group>
-                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="/delete-post/{{post.id}}" class="dropdown=item">Delete</a></li>
-                </ul>
+            <div>
+                                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+                <!--                <div class="likelen">{{ post.likes|length }}</div>-->
+                <span id="likes-count-{{post.id}}">
+        {{ post.likes|length }}</span>
+                {% if user.id in post.likes|map(attribute="author")|list %}
+                <a
+                        class="fas fa-heart"
+                        id="like-button-{{post.id}}"
+                        onclick="like({{post.id}})"
+                ></a>
+                {% else %}
+                <a
+                        class="far fa-heart"
+                        id="like-button-{{post.id}}"
+                        onclick="like({{post.id}})"
+                ></a>
+                {% endif %}
+                <!--     <ul class="special">
+                    <li><a href="/like-post/{{post.id}}" class="icon_class"></a></li>
+                </ul>-->
+                {% if user.id == post.author %}
+                <div class="" btn-group>
+                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/delete-post/{{post.id}}" class="dropdown=item">Delete</a></li>
+                    </ul>
+                </div>
+                {% endif %}
             </div>
-            {% endif %}
         </div>
         <div class="card-body">
             <div class="card-text">{{post.text}}</div>
@@ -40,7 +67,8 @@
                                             data-bs-toggle="dropdown">
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a href="/delete-comment/{{comment.id}}" class="dropdown=item">Delete</a></li>
+                                        <li><a href="/delete-comment/{{comment.id}}" class="dropdown=item">Delete</a>
+                                        </li>
                                     </ul>
                                 </div>
                                 {% endif %}
