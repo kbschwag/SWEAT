@@ -230,56 +230,28 @@ section.home-banner {
 .ul a {
   text-decoration:none;
   font-size:25px;
+  color: red;
 }
 .likelen{
     color: #000;
 }
 
-.heartid {
-    float: right;
-	cursor:pointer;
-	background:transparent;
-	border:0;
-	outline: none;
-	position: relative;
+
+
+.fas, .far {
+    color: red;
 }
 
-#heart {
-  position: relative;
-  width: 33px;
-  height: 30px;
-
+.far:hover {
+ transform: scale(1.5);
+ color: red;
 }
 
-#heart::before, #heart::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 17px;
-  height: 27px;
-  border-radius: 50px 50px 0 0;
-  background: #A9A9A9;
+.fas:hover {
+ transform: scale(1.5);
+ color: red;
 }
 
-#heart::before {
-  left: 17px;
-  transform: rotate(-45deg);
-  transform-origin: 0 100%;
-}
-
-#heart::after {
-  left: 0;
-  transform: rotate(45deg);
-  transform-origin: 100% 100%;
-}
-
-#heart:hover {
-    transform: scale(1.2);
-}
-
-#heart:focus {
-    background-color: red;
-}
 
 /*Preloader*/
 #preloader-wrapper {
@@ -442,7 +414,7 @@ section.home-banner {
 position: fixed;
 background-color: #000;
 width: 100%;
-z-index: 100;
+
 }
 
 .navbar-brand {
@@ -1044,6 +1016,57 @@ service img{
 .l-subfooter {
     position: relative;
     margin: 0 auto;
+}
+
+#iconSelector {
+    background:#CCC;
+    width: 350px;
+    height: 350px;
+    overflow: auto;
+    display:none;
+    padding: 5px;
+    position: relative;
+}
+.ico{
+    display: block;
+    background: #AAA;
+    margin:3px;
+    padding: 5px;
+    width: 32px;
+    height: 32px;
+    float: left;
+    cursor: pointer;
+}
+.close{
+   display: block;
+    position: absolute;
+    right: 0px;
+    top: -10px;
+    border-radius: 360px;
+    padding: 2px;
+    background: red;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 12px;
+    z-index: 100;
+}
+.iconDisplay{
+    height:47px;
+    width:47px;
+    border:1px dotted #ccc;
+    margin-bottom:5px;
+}
+
+label {
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+
+label:hover {
+  filter: grayscale(0);
+}
+input[type="radio"]:checked + label {
+  filter: grayscale(0);
 }
 
 /*# sourceMappingURL=maps/style.css.map */
