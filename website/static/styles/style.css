@@ -187,6 +187,62 @@ section.home-banner {
     text-align: center;
     padding-top: 70px;
     transform: translateY(-50%);
+    background: rgba(255, 0, 0, .3);
+}
+
+section.about-banner {
+    height: 101vh;
+     z-index:-1;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://thumbor.bigedition.com/mia-hamm/F16cHOKdRN-1oq2-wZwWJySMLBA=/800x0/filters:quality(80)/granite-web-prod/86/43/864317cf3a2f4c5b978aee7ee2a1063f.jpeg");
+}
+
+.about-banner-inner {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding-top: 70px;
+    transform: translateY(-50%);
+
+}
+
+section.about2-banner {
+    height: 101vh;
+     z-index:-1;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://www.muscleandfitness.com/wp-content/uploads/2019/07/Soccer-Player-Kicking-Ball.jpg?quality=86&strip=all");
+}
+
+.about2-banner-inner {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding-top: 70px;
+    transform: translateY(-50%);
+
+}
+
+section.about3-banner {
+    height: 101vh;
+     z-index:-1;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://www.bard.edu/files/programs/image.php?id=99962213");
 }
 
 .subheading {
@@ -463,7 +519,6 @@ z-index: 0;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: linear-gradient( #99E1D9, #70ABAF);
     display: block;
     border-radius: 40px;
     padding: 50px;
@@ -474,7 +529,7 @@ z-index: 0;
     padding: 30px;
     line-height: 200%;
     padding-bottom: 100px;
-    color: #000;
+    color: #fff;
 }
 
 /*--
