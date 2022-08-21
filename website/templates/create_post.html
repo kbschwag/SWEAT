@@ -22,40 +22,6 @@ import $ from "jquery";
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/magnific-popup/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
     <script src="{{url_for('static', filename='main.js')}}"></script>
-    <script src="{{url_for('static', filename='iconSelector.js')}}"></script>
-
-    <script>
-            var btn = document.getElementById('btnAdd');
-btn.onclick = function(){
-    var tb = document.getElementById('option'), val = tb.value;
-    if(val.length){
-        var sel = document.getElementById('sel');
-        var opt = document.createElement('option');
-        opt.value = val;
-        opt.innerHTML = val;
-        sel.appendChild(opt);
-        tb.value = '';
-    }
-};
-
-    </script>
-
-    <script>
-        $(".selectIcon").click(function () {
-    $("#iconSelector").fadeToggle();
-});
-
-$("#iconSelector span").click(function () {
-    var xthis = $(this);
-    xthis.click(function(){
-        $("#iconSelector").hide();
-        $.post('/echo/html','icon='+$(xthis).attr('class'),function(){
-            $(".iconDisplay").html(xthis.get(0));
-        });
-    });
-});
-
-    </script>
 
 </head>
 
@@ -76,139 +42,6 @@ $("#iconSelector span").click(function () {
                 about
                 mental health </p>
 
-            For this type of form control you should use a radio button as the user is only allowed to make one selection.
-
-You can do this quite easily by using radio inputs and hiding them using the bootstrap class sr-only. You then apply your images and styling to the labels
-
-(I've added some random CSS to show when an option is selected so feel free to modify that to suit your needs)
-
-label {
-  cursor: pointer;
-  filter: grayscale(100%);
-}
-
-label:hover {
-  filter: grayscale(0);
-}
-input[type="radio"]:checked + label {
-  filter: grayscale(0);
-}
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet"/>
-<fieldset>
-  <legend>
-    Please select gender
-  </legend>
-  <input type="radio" name="gender" class="sr-only" id="male">
-  <label for="male">
-    <img src="http://findicons.com/files/icons/1688/web_blog/48/user_male_white_red_brown.png" alt="male">
-  </label>
-  <input type="radio" name="gender" class="sr-only" id="female">
-  <label for="female">
-    <img src="http://findicons.com/files/icons/1688/web_blog/48/user_female_white_pink_black.png" alt="female">
-  </label>
-    <input type="radio" name="gender" class="sr-only" id="smile">
-  <label for="smile">
-    <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="smile">
-  </label>
-</fieldset>
-
-            <!DOCTYPE html>
-<html>
-
-<head>
-	<title>Adding image to dropdown list</title>
-	<style>
-		.dropbtn {
-			background-color: #4CAF50;
-			color: white;
-			padding: 16px;
-			font-size: 16px;
-			border: none;
-			cursor: pointer;
-		}
-
-		.dropdown {
-			position: relative;
-			display: inline-block;
-		}
-
-		.dropdown-content {
-			display: none;
-			position: absolute;
-			background-color: #f9f9f9;
-			min-width: 160px;
-			box-shadow: 0px 8px 16px
-				0px rgba(0, 0, 0, 0.2);
-			z-index: 1;
-		}
-
-		.dropdown-content a {
-			color: black;
-			padding: 12px 16px;
-			text-decoration: none;
-			display: block;
-		}
-
-		.dropdown-content a:hover {
-			background-color: #f1f1f1
-		}
-
-		.dropdown:hover .dropdown-content {
-			display: block;
-		}
-
-		.dropdown:hover .dropbtn {
-			background-color: #3e8e41;
-		}
-	</style>
-</head>
-
-<body>
-	<center>
-		<h1 style="color: green">
-			GeeksforGeeks
-		</h1>
-
-		<div class="dropdown">
-			<button class="dropbtn">
-				Country Flags
-			</button>
-
-			<div class="dropdown-content">
-				<a href="#">
-					<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20200630132503/iflag.jpg"
-					width="20" height="15"> India</a>
-
-				<a href="#">
-					<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20200630132504/uflag.jpg"
-					width="20" height="15"> USA</a>
-				<a href="#">
-					<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20200630132502/eflag.jpg"
-					width="20" height="15"> England</a>
-				<a href="#">
-					<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20200630132500/bflag.jpg"
-					width="20" height="15"> Brazil</a>
-			</div>
-		</div>
-	</center>
-</body>
-
-<select name="countries">
-    <option value="NL">
-        <column> 😁&#128513;Smile </column>
-        <column value="DE">🇩🇪&emsp;Germany</column>
-    </option>
-    <option value="FR">🇫🇷&emsp;France</option>
-    <option value="ES">🇪🇸&emsp;Spain</option>
-</select>
-
-</html>
-
-
             <form class="subject" action="/action_page.php" method="get">
                 <label for="browser">Topic</label>
                 <input list="browsers" name="browser" id="browser">
@@ -223,30 +56,16 @@ input[type="radio"]:checked + label {
                 <textarea name="text" id="text" class="form-control"></textarea>
                 <br/>
 
+                <br>
+                <input class="btn btn-main" type="submit">
 
 
-<div class="iconDisplay"></div>
-<button class="selectIcon">Select Icon</button>
-<div id="iconSelector">
-    <span class="ico icon-icon1"></span>
-    <span class="ico icon-icon2"></span>
-    <span class="ico icon-icon3"></span>
-    <span class="ico icon-icon4"></span>
-    <span class="ico icon-icon5"></span>
-    <span class="ico icon-icon6"></span>
-    <span class="ico icon-icon7"></span>
-    <span class="ico icon-icon8"></span>
-</div>
+            </form>
 
-    <br>
-    <input class="btn btn-main" type="submit">
+            <br/>
+        </form>
+    </div>
 
-
-</form>
-
-<br/>
-</form>
-   </div>
 
 </form>
 </body>

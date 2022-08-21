@@ -1057,16 +1057,51 @@ service img{
     margin-bottom:5px;
 }
 
+.select-dropdown {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+}
+
+.select-dropdown > li {
+    flex: 1 0 25%;
+}
+
+
+.cb-flex {
+    display: flex;
+    flex-wrap: wrap;
+    width: 380px;
+}
+
+.cb-flex .wj-listbox-item {
+    width: 120px;
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
+ }
+
+.wj-listbox-item table {
+    table-layout: fixed;
+}
+
+.wj-listbox-item td {
+    width: 120px;
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wj-listbox-item td.number {
+    width: 80px;
+    text-align: right;
+}
+
 label {
-  cursor: pointer;
-  filter: grayscale(100%);
+    margin-right: 3px;
 }
 
-label:hover {
-  filter: grayscale(0);
+body {
+    margin-bottom: 24px;
 }
-input[type="radio"]:checked + label {
-  filter: grayscale(0);
-}
-
 /*# sourceMappingURL=maps/style.css.map */
