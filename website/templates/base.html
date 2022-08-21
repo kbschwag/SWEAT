@@ -14,6 +14,10 @@
             crossorigin="anonymous"
     />
     <title>{% block title %}{% endblock %}</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light">
@@ -102,6 +106,12 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"
 ></script>
+
+<script>
+    function delete_flash(flash){
+        $(flash).parent().remove()
+    }
+</script>
 
 <script
         type="text/javascript"
