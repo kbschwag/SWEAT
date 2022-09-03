@@ -13,10 +13,14 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 from flask import Flask, render_template, request, redirect
+from flask_wtf import RecaptchaField
 import sqlite3
 
 app = Flask(__name__)
 db_locale = 'students.db'
+app.config['RECAPTCHA_PUBLIC_KEY'] = '6Lf2mcMhAAAAAHPekK8_exQ5enP1db6kYKlevRyb'
+app.config['RECAPTCHA_PRIVATE_KEY'] = '6Lf2mcMhAAAAALsvyxebf4_d8gSHDE5ZkYa3hNpo'
+
 
 @app.route('/')
 @app.route('/home')

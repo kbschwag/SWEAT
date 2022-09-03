@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, redirect, url_for, request, flash
 from . import db
 from .models import User
 from flask_login import login_user, logout_user, login_required, current_user
+from flask_wtf import RecaptchaField
 from werkzeug.security import generate_password_hash, check_password_hash
 import  re
 
@@ -13,6 +14,7 @@ def login():
     if request.method == 'POST':
         email = request.form.get("email")
         password = request.form.get("password")
+        recaptcha = RecaptchaField()
 
         user = User.query.filter_by(email=email).first()
         if user:
