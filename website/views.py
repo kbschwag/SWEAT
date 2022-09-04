@@ -2,9 +2,18 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
 from flask_login import login_required, current_user
 from .models import Post, User, Comment, Like
 from . import db
+from jinja2 import Markup
+from flask import *
+from flask_recaptcha import ReCaptcha
+from flask_wtf import Form, RecaptchaField
 
 views = Blueprint("views", __name__)
 
+app = Flask(__name__)
+app.config['RECAPTCHA_PUBLIC_KEY'] = '6Lf2mcMhAAAAAHPekK8_exQ5enP1db6kYKlevRyb'
+app.config['RECAPTCHA_PRIVATE_KEY'] = '6Lf2mcMhAAAAALsvyxebf4_d8gSHDE5ZkYa3hNpo'
+recaptcha = ReCaptcha(app)
+@views.route('/', methods=['GET', 'POST'])
 @views.route("/")
 @views.route("/home")
 

@@ -3,8 +3,11 @@ from . import db
 from .models import User
 from flask_login import login_user, logout_user, login_required, current_user
 from flask_wtf import RecaptchaField
+from flask import *
+from flask_recaptcha import ReCaptcha
 from werkzeug.security import generate_password_hash, check_password_hash
 import  re
+import requests
 
 auth = Blueprint("auth", __name__)
 
@@ -39,9 +42,10 @@ def sign_up():
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
         match = re.fullmatch(regex, email)
-
+        captcha_response = request.form['g-recaptcha-response']
         email_exists = User.query.filter_by(email=email).first()
         username_exists = User.query.filter_by(username=username).first()
+
         if email_exists:
             flash('Email is already in use.', category='error')
         elif match is None:
@@ -57,16 +61,33 @@ def sign_up():
         elif len(email) < 4:
             flash('Email is invalid', category='error')
         else:
-            new_user = User(email=email, username=username, password=generate_password_hash(password1, method='sha256'))
-            db.session.add(new_user)
-            db.session.commit()
-            login_user(new_user, remember=True)
-            flash('User created!')
-            return redirect(url_for('views.home'))
-
+            if is_human(captcha_response):
+                # Process request here
+                status = "Detail submitted successfully."
+                flash(status)
+                new_user = User(email=email, username=username,
+                                password=generate_password_hash(password1, method='sha256'))
+                db.session.add(new_user)
+                db.session.commit()
+                login_user(new_user, remember=True)
+                flash('User created!')
+                return redirect(url_for('views.home'))
+            elif (1 == 1):
+                # Log invalid attempts
+                status = "Sorry ! Bots are not allowed."
+                flash(status, category='error')
 
     return render_template("signup.html", user=current_user)
 
+def is_human(captcha_response):
+    """ Validating recaptcha response from google server
+        Returns True captcha test passed for submitted form else returns False.
+    """
+    secret = "6Lf2mcMhAAAAALsvyxebf4_d8gSHDE5ZkYa3hNpo"
+    payload = {'response':captcha_response, 'secret':secret}
+    response = requests.post("https://www.google.com/recaptcha/api/siteverify", payload)
+    response_text = json.loads(response.text)
+    return response_text['success']
 
 @auth.route("/logout")
 @login_required
