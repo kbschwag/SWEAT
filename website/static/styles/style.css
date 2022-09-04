@@ -289,6 +289,15 @@ section.about3-banner {
   background-color: #70ABAF;
 }
 
+.btn-comment {
+  color: #fff;
+  border-radius: 40px;
+    font-size: 13px;
+    padding: 10px 30px;
+  display: inline-block;
+  background-color: #70ABAF;
+}
+
 .btn-main:hover, .btn-main:focus {
   color: #fff;
   transform: scale(1.2);
@@ -344,9 +353,20 @@ section.about3-banner {
     color: #000;
 }
 
+.card-footer {
+    display: flex;
+    align-items: center!important;
+    justify-content: space-between!important;
 
+}
 
-.fas, .far {
+.card-footer #text {
+    color: green;
+    text-align: left;
+    justify-content: left;
+}
+
+.far, .fas {
     color: red;
 }
 
@@ -358,6 +378,10 @@ section.about3-banner {
 .fas:hover {
  transform: scale(1.5);
  color: red;
+}
+
+.fas fa-trash-can {
+    color: blue;
 }
 
 
@@ -626,8 +650,6 @@ z-index: 0;
 #text {
     border-style:solid;
     border-width:thin;
-    font-size:18px;
-    padding:15px 40px;
 }
 
 .gallery .gallery-overlay .gallery-popup {
@@ -677,7 +699,6 @@ z-index: 0;
 }
 
 .input-group input {
-  height: 50px;
   border-radius: 40px;
   border: none;
   padding-left: 15px;
@@ -845,9 +866,6 @@ form {
    width: 100%;
 }
 
-.form-control {
-    margin: 30px;
-}
 
 #browser {
     background-color: #fff;
@@ -873,6 +891,17 @@ form {
 .card-text {
     color:black;
 }
+
+.border-dark {
+    margin-top: 30px;
+}
+
+.card-title {
+    color:black;
+    font-weight:bold;
+    font-size: 24px;
+}
+
 input, textarea {
   font-size: 1rem;
   padding: 10px;
@@ -881,9 +910,6 @@ input, textarea {
   border: none;
 }
 
-form{
-    padding-top: 80px;
-}
 
 form h1 {
     color: white;
@@ -1331,4 +1357,8 @@ label {
 
 .faqs{
   margin-bottom: 40px;
+}
+
+.comment-text {
+ color: black;
 }
