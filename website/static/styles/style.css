@@ -9,7 +9,27 @@ Blue2: #70ABAF
 White: #F0F7F4
 Gold: #A58C50
 */
+html, body, {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
 
+.ml4 {
+  position: relative;
+  font-size: 4.5em;
+}
+.ml4 .letters {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0.3em;
+  right: 0;
+  opacity: 0;
+  color: #F0F7F4;
+}
 body {
   font-size: 14px;
   font-weight: 300;
@@ -36,6 +56,10 @@ h6 {
   color: #A58C50;
 }
 
+h1 {
+    letter-spacing: 0.3em;
+     font-size: 100px;
+}
 h4 {
     color: #FFF;
 }
@@ -44,11 +68,6 @@ h5 {
     color: #000;
 }
 
-h1,
-.h1 {
-  font-size: 44px;
-  line-height: 56px;
-}
 
 h2,
 .h2 {
@@ -271,7 +290,7 @@ section.about2-banner {
     left: 0;
     width: 80%;
     text-align: center;
-    padding-top: 580px;
+    padding-top: 50px;
     transform: translateY(-50%);
     background: rgba(112, 171, 175, 0.9);
 }
