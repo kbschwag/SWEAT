@@ -5,7 +5,12 @@ from flask_login import LoginManager
 from flask_wtf import RecaptchaField
 from flask import *
 from flask_recaptcha import ReCaptcha
-from jinja2 import Markup
+from markupsafe import Markup
+from jinja2.utils import markupsafe
+markupsafe.Markup()
+Markup('')
+#from jinja2 import Markup
+
 
 db = SQLAlchemy()
 DB_NAME = "database.db"

@@ -184,6 +184,30 @@ section.home-banner {
     padding: 48px 0;
 }
 
+section.solutions-banner {
+    height: 70vh;
+     z-index:-1;
+    position: relative;
+    background-attachment: fixed;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://www.hamilton.edu/assets/mmlibrary/images/original/washburnwg15d.jpg");
+}
+
+.solutions-banner-inner {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 70px;
+    transform: translateY(-50%);
+    background-color: rgba( 0, 0, 0, 0.7);
+    color: #fff;
+}
 
 section.home-banner {
     height: 101vh;
@@ -243,13 +267,13 @@ section.about2-banner {
 
 .about2-banner-inner {
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 0;
-    width: 100%;
+    width: 80%;
     text-align: center;
-    padding-top: 70px;
+    padding-top: 580px;
     transform: translateY(-50%);
-
+    background: rgba(112, 171, 175, 0.9);
 }
 
 section.about3-banner {
@@ -976,7 +1000,6 @@ tr:nth-child(even) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: auto;
   background-color: #99E1D9;
   color: #fff;
   text-align: center;
@@ -985,6 +1008,18 @@ tr:nth-child(even) {
   transition: .3s;
   margin-top: 50px;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .box-area {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .box-area {
+    grid-template-columns: auto;
+  }
 }
 
 
@@ -1015,6 +1050,11 @@ tr:nth-child(even) {
   -webkit-background-size:cover;
   background-size: cover;
   background-position: center center;
+  background-color: blue;
+}
+
+.img-fluid {
+    border-radius: 40%;
 }
 
 
@@ -1075,6 +1115,17 @@ tr:nth-child(even) {
   overflow: hidden;
   padding: 20px;
 }
+
+.sweat{
+  display: inline-block;
+  width: calc(100% / 5);
+  margin: 0 -2px;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
 .service{
   display: inline-block;
   width: calc(100% / 3);

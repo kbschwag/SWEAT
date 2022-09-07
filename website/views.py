@@ -2,7 +2,11 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
 from flask_login import login_required, current_user
 from .models import Post, User, Comment, Like
 from . import db
-from jinja2 import Markup
+from markupsafe import Markup
+from jinja2.utils import markupsafe
+markupsafe.Markup()
+Markup('')
+#from jinja2 import Markup
 from flask import *
 from flask_recaptcha import ReCaptcha
 from flask_wtf import Form, RecaptchaField
@@ -36,6 +40,14 @@ def community_guidelines():
 def view_posts():
     posts = Post.query.all()
     return render_template("view_posts.html", user=current_user, posts=posts)
+
+@views.route("/solutions/", methods = ["GET"])
+@login_required
+def solutions():
+    solutions_posts = Post.query.all()
+    return render_template("solutions.html", user=current_user, posts=posts)
+
+
 
 # get post is how we input data into the back end
 @views.route("/create-post", methods=['GET', 'POST'])
