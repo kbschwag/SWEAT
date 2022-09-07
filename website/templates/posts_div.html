@@ -39,7 +39,11 @@
         </div>
         <div class="card-body">
             <div class="card-title">{{post.browser}}</div>
-            <div class="card-text">{{post.text}}</div>
+<div class="ex1">{{ post.text }}</div>
+
+
+
+
             <br/>
             <div class="collapse" id="comments-{{post.id}}">
                    <form class="input-group mb-3" method="POST" action="/create-comment/{{post.id}}">
