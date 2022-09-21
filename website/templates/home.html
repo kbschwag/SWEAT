@@ -246,9 +246,130 @@
 </div>
 </section>
 
-<img src="{{url_for('static', filename='../static/bike1.jpg')}}" align="middle"/>
-<img src="{{url_for('static', filename='../static/bike2.jpg')}}" align="middle"/>
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+	<script type='text/javascript'>
+    function GetMap() {
+        var map = new Microsoft.Maps.Map('#myMap', {});
 
+        //Generate 2 random locations within the current map view.
+        var locs = Microsoft.Maps.TestDataGenerator.getLocations(2, map.getBounds());
+
+        //Create a blue circle that has a 25 pixel radius as a pushpin and add to map.
+        var pin1 = createCirclePushpin(locs[0], 40, 'rgba(0, 0, 255, 0.5)', 'black', 1);
+        map.entities.push(pin1);
+
+        //Create a white circle that has a 35 pixel radius and a black outline as a pushpin and add to map.
+        var pin2 = createCirclePushpin(locs[1], 35, 'rgba(255, 255, 255, 0.8)', 'black', 1);
+        map.entities.push(pin2);
+    }
+
+    function createCirclePushpin(location, radius, fillColor, strokeColor, strokeWidth) {
+        strokeWidth = strokeWidth || 0;
+
+        //Create an SVG string of a circle with the specified radius and color.
+        var svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="', (radius * 2),
+            '" height="', (radius * 2), '"><circle cx="', radius, '" cy="', radius, '" r="',
+            (radius - strokeWidth), '" stroke="', strokeColor, '" stroke-width="', strokeWidth, '" fill="', fillColor, '"/></svg>'];
+
+        //Create a pushpin from the SVG and anchor it to the center of the circle.
+        return new Microsoft.Maps.Pushpin(location, {
+            icon: svg.join(''),
+            anchor: new Microsoft.Maps.Point(radius, radius)
+        });
+    }
+    </script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Aluz1wuPB60H-mWycWKSXV3T436kJIGEtqqRhLjc-Ib7hzDgl-JTtWHtmWq6F59u' async defer></script>
+</head>
+<body>
+    <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+</body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+	<script type='text/javascript'>
+    function GetMap() {
+        var map = new Microsoft.Maps.Map('#myMap', {
+            credentials: 'Aluz1wuPB60H-mWycWKSXV3T436kJIGEtqqRhLjc-Ib7hzDgl-JTtWHtmWq6F59u',
+            center: new Microsoft.Maps.Location(42.652580, -73.756233)
+
+        });
+        function drawCircle(radius, origin) {
+    var RadPerDeg = Math.PI / 180;
+    var earthRadius = 3959;
+    var lat = origin.latitude * RadPerDeg;
+    var lon = origin.longitude * RadPerDeg;
+    var locs = new Array();
+    var AngDist = parseFloat(radius) / earthRadius;
+    for (x = 0; x <= 360; x++) { //making a 360-sided polygon
+        var pLatitude, pLongitude;
+        // With a nice, flat earth we could just say p2.Longitude = lon * sin(brng) and p2.Latitude = lat * cos(brng)
+        // But it ain't, so we can't.  See http://www.movable-type.co.uk/scripts/latlong.html
+        brng = x * RadPerDeg;
+        pLatitude = Math.asin(Math.sin(lat) * Math.cos(AngDist) + Math.cos(lat) * Math.sin(AngDist) * Math.cos(brng)); //still in radians
+        pLongitude = lon + Math.atan2(Math.sin(brng) * Math.sin(AngDist) * Math.cos(lat), Math.cos(AngDist) - Math.sin(lat) * Math.sin(pLatitude));
+        pLatitude = pLatitude / RadPerDeg;
+        pLongitude = pLongitude / RadPerDeg;
+        locs.push(new MM.Location(pLatitude, pLongitude));
+    };
+    circle = new MM.Polyline(locs, { visible: true, strokeThickness: 2, strokeDashArray: "1", strokeColor: new MM.Color(200, 0, 0, 200, 0) });
+    map.entities.push(circle);
+};
+        var center = map.getCenter();
+
+        //Create custom Pushpin
+        var pin = new Microsoft.Maps.Pushpin(center, {
+            title: 'REIS',
+            subTitle: 'Business Center',
+            text: '1'
+        });
+
+        //Add the pushpin to the map
+        map.entities.push(pin);
+    }
+
+    </script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+</head>
+<body>
+    <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+</body>
+</html>-->
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset-utf-8">
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript">
+        var map;
+        var geoLocationProvider;
+        function GetMap() {
+            var mapOptions={ credentials: Aluz1wuPB60H-mWycWKSXV3T436kJIGEtqqRhLjc-Ib7hzDgl-JTtWHtmWq6F59u };
+            map=new Microsoft.Maps.Map(document.getElementById("mapDiv"),mapOptions);
+            geolocationProvider=new Microsoft.Maps.GeolocationProvider(map);
+
+            geolocationProvider.addAccuracyCircle(new Microsoft.Maps.Location(12.966970, 77.587280(,50000,50000,
+                {polygonOptions: { fillColor: new Microsoft.Maps.Color(100,100,0,100), strokeColor: new Microsoft.Maps.Color(100,100,0,100)}});
+            alert(map.entities.getLength());
+            var entity=map.entities.pop();
+            alert("Entity Type:" + entity.toString());
+        }
+
+    </script>
+</head>
+<body onload="GetMap();">
+    <div id="mapDiv" style="position: relative; width: 1000px; height: 800px;"></div>
+</body>
+</html>-->
 <script>
     var ml4 = {};
 ml4.opacityIn = [0,1];

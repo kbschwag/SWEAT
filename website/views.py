@@ -92,6 +92,17 @@ def posts(username):
     posts=Post.query.filter_by(author=user.id).all()
     return render_template("posts.html", user=current_user, posts=posts, username=username)
 
+# @views.route("/posts_sorted/<browser>")
+# @login_required
+# def posts_sorted(browser):
+#     browser = User.query.filter_by(browser=browser).first()
+#     if not browser:
+#         flash('No user with that username exists.', category='error')
+#         return redirect(url_for('views.view_posts'))
+#     posts_sorted=Browser.query.filter_by(browser=browser).all()
+#     return render_template("posts_sorted.html", user=current_user, browser=browser, username=username)
+
+
 @views.route("/create-comment/<post_id>", methods=['POST'])
 @login_required
 def create_comment(post_id):
