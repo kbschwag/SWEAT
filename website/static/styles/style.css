@@ -45,6 +45,13 @@ div {
     display: block;
 }
 
+a,
+a:active,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -116,10 +123,59 @@ color: black;
   margin-top: 100px;
 }
 
-#posts {
 
-    padding-bottom: 1000px;
+/* Fixed sidenav, full height */
+.sidenav {
+  padding-top: 100px;
+   position: fixed;
+   width: 30%;
+   height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  overflow-x: hidden;
 }
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #FFF;
+  display: block;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #D3D3D3;
+}
+
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #000;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
 
 a:focus,
 .btn:focus,
@@ -128,21 +184,30 @@ a:focus,
   outline: 0 none;
 }
 
-a,
-a:active,
-a:focus,
-a:active {
-  text-decoration: none;
+#posts {
+    padding-top: 100px;
+    width: 100%;
+    background-color: blue;
+        float: right !important;
+}
+
+.border-dark {
+    width: 60%;
+    float: right !important;
+    margin-top: 30px;
+}
+
+.posts-header {
+    text-align: center;
+}
+
+.posts-page {
+
 }
 
 
 .section {
   padding: 100px 0;
-}
-
-.font-size-60 {
-  font-size: 60px;
-  line-height: 1.2;
 }
 
 @media (max-width: 575px) {
@@ -192,11 +257,10 @@ section.home-banner {
      z-index:-1;
     position: relative;
     background-attachment: fixed;
-    background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('/static/bike1.jpg')}});
+    background-image: url('/static/home-hero.jpg')}});
 
     transition: all 0.9s ease 0s;
     transition-property: all;
@@ -292,6 +356,8 @@ section.about2-banner {
     padding-top: 50px;
     transform: translateY(-50%);
     background: rgba(112, 171, 175, 0.9);
+    text-align: left;
+    padding: 40px;
 }
 
 section.about3-banner {
@@ -846,9 +912,7 @@ form {
     color:black;
 }
 
-.border-dark {
-    margin-top: 30px;
-}
+
 
 .card-title {
     color:black;
@@ -892,29 +956,6 @@ input[type="submit"]:hover {
   background-color: white;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2
-}
-
-.map {
-  background-color: #70ABAF;
-  height: auto;
-  margin-top: 60px;
-  text-align: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-#workout {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-#videos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .box-area{
   display: grid;
@@ -1101,6 +1142,10 @@ service img{
   .service{
     width: 100%;
   }
+}
+
+.ex1 {
+    color: #000;
 }
 
 
