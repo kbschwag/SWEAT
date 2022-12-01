@@ -187,8 +187,7 @@ a:focus,
 #posts {
     padding-top: 100px;
     width: 100%;
-    background-color: blue;
-        float: right !important;
+    float: right !important;
 }
 
 .border-dark {
@@ -201,8 +200,8 @@ a:focus,
     text-align: center;
 }
 
-.posts-page {
-
+.container {
+    overflow: hidden;
 }
 
 
@@ -210,11 +209,18 @@ a:focus,
   padding: 100px 0;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 800px) {
   .font-size-60 {
     font-size: 40px;
   }
 
+.flip-boxes {
+    padding: 10px;
+    display: grid !important;
+    grid-template-columns: auto !important;
+    text-align: center;
+    height: 250vh !important;
+}
 }
 
 .mb-10 {
@@ -400,6 +406,8 @@ section.about3-banner {
   box-shadow: 0 5px 10px;
   background-color: #70ABAF;
   margin-top: 50px;
+  z-index: 5;
+  margin-bottom: 20px;
 }
 
 .btn-comment {
@@ -616,9 +624,6 @@ section.feature-list {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('/static/bike2.jpg')}});
-    clip: rect(0px,auto,auto,0px);
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -732,32 +737,69 @@ section.feature-list {
   color: #444;
   padding: 10px;
 }
-
-footer {
-  text-align: center;
-  background: #f4f4f4;
-  padding: 50px 0px;
+.call-us {
+    width: 100%;
+    height: auto;
+    background-color: #A58C50;
+    color: #000 !important;
+    position: relative;
+    align-items: center;
+    text-align: center;
+  z-index: 10;
+  padding-bottom: 50px;
 }
 
-footer .footer-logo {
-  color: #555;
-  display: block;
+.other-sites {
+  align-items: center;
+  width: 100%;
 }
 
-footer p.copyright-text {
-  font-weight: 300;
-  font-size: 12px;
-  color: #ffffff;
-  letter-spacing: 3px;
+.other-sites li {
+  width: 25%;
+}
+
+.call p{
+  font-size: 20px;
   margin-top: 15px;
+  font-weight: bold;
+
 }
 
-footer p.copyright-text a {
-  color: #282828;
+.call img{
+  height: 30px;
+  background-position: center;
+  background-size: cover;
+  padding-right: 10px;
+    padding-left: 10px;
+  margin-top: 10px;
 }
 
-footer p.copyright-text a:hover {
-  text-decoration: none;
+
+
+.other-sites ul {
+    display: flex;
+    margin: 20px;
+    padding: 0;
+
+}
+
+.other-sites li a {
+    text-decoration: none;
+    color: #FFF;
+    padding: 1rem;
+    font-size: 14px;
+}
+
+.other-sites li:hover {
+  color: #D3D3D3;
+}
+
+
+.other-sites li img{
+ height: 20px !important;
+  width: 20px !important;
+  position: relative;
+  bottom: -2px;
 }
 /* Login acount style.*/
 
@@ -880,7 +922,7 @@ footer p.copyright-text a:hover {
 }
 
 form {
-
+    margin-top: 100px;
   margin-left: auto;
    margin-right: auto;
    width: 100%;
@@ -889,6 +931,8 @@ form {
 
 #browser {
     background-color: #fff;
+    margin: 50px;
+    border-radius: 3px;
 }
 
 .datalist {
@@ -1059,10 +1103,11 @@ input[type="submit"]:hover {
 
 
 
-@media (max-width: 1024px)
+@media (max-width: 1024px) {
 .l-footer.layout_compact .l-subfooter.at_bottom {
     display: block;
     box-sizing: border-box;
+}
 }
 
 .services{
@@ -1149,30 +1194,6 @@ service img{
 }
 
 
-.l-footer.layout_compact{
-    bottom: 0;
-    width: 100%;
-    font-size: 0.9em;
-    line-height: 20px;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #A58C50;
-}
-
-.l-subfooter.at_bottom {
-    background-color: #A58C50;
-}
-
-.l-subfooter {
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.l-subfooter {
-    position: relative;
-    margin: 0 auto;
-}
 
 #iconSelector {
     background:#CCC;
@@ -1258,11 +1279,10 @@ label {
 }
 
 .flip-boxes {
-    padding: 100px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto;
     text-align: center;
+    grid-gap: 10px;
     height: 100vh;
     margin: 0 auto;
 
@@ -1274,12 +1294,16 @@ label {
 
 .flip-box {
   background-color: transparent;
-  width: 25%;
   height: auto;
-  perspective: 1000px;
-  flex-basis: 33.33%;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
   padding: 20px;
-  box-sizing: border-box;
+  transition: .3s;
 }
 
 .flip-box img {
@@ -1326,6 +1350,10 @@ label {
   transform: rotateY(180deg);
   height: 50vh;
   padding: 20px;
+}
+
+.FAQs {
+    padding-top: 50px;
 }
 
 .accordion {

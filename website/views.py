@@ -41,12 +41,6 @@ def view_posts():
     posts = Post.query.all()
     return render_template("view_posts.html", user=current_user, posts=posts)
 
-@views.route("/solutions/", methods = ["GET"])
-@login_required
-def solutions():
-    solutions_posts = Post.query.all()
-    return render_template("solutions.html", user=current_user, posts=posts)
-
 
 
 # get post is how we input data into the back end
@@ -91,6 +85,8 @@ def posts(username):
         return redirect(url_for('views.view_posts'))
     posts=Post.query.filter_by(author=user.id).all()
     return render_template("posts.html", user=current_user, posts=posts, username=username)
+
+
 
 # @views.route("/posts_sorted/<browser>")
 # @login_required

@@ -10,17 +10,18 @@
 <section class="posts-page">
 
 <div class="sidenav">
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
+  <a href="#about">Injured</a>
+  <a href="#services">Freshman</a>
   <a href="#clients">Clients</a>
   <a href="#contact">Contact</a>
-  <button class="dropdown-btn">Dropdown
+  <button class="dropdown-btn">Class
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+    <a href="#">Freshman</a>
+    <a href="#">Sophomore</a>
+    <a href="#">Junior</a>
+      <a href="#">Senior</a>
   </div>
   <a href="#contact">Search</a>
 </div>
@@ -59,7 +60,7 @@
             </div>
         </div>
         <div class="card-body">
-            <div class="card-title">{{post.browser}}</div>
+            <div href="/posts/{{post.browser}}" class="card-title">{{post.browser}}</div>
 <div class="ex1">{{ post.text }}</div>
 
 
@@ -99,7 +100,7 @@
             <p class="card-text">
                 {% if post.comments|length >= 0 %}
                     <small>{{post.comments|length}}</small>
-                <a data-bs-toggle="collapse""
+                <a data-bs-toggle="collapse"
                         class="fa-regular fa-comment"
                         href="#comments-{{post.id}}"
                 ></a>
@@ -118,19 +119,22 @@
                 ></a>
 
         </div>
-    </div>
-
-        {% endfor %}
-
-
-    {% block footer %}
-    <div align="center">
+        <div align="center">
         <a href="/create-post">
             <button type="button" class="btn btn-primary btn-lg">
                 Fill out Form
             </button>
         </a>
     </div>
+
+    </div>
+
+
+        {% endfor %}
+
+
+    {% block footer %}
+
 </div>
 </section>
 
