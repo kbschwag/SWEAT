@@ -83,11 +83,7 @@
                             <div>
 
                                 {% if user.id == comment.author or user.id == post.author %}
-                                <a style="color:blue;"
-                        class="fas fa-trash-can"
-                        href="/delete-post/{{post.id}}"
-                ></a>
-
+                                    <a style="color:blue;" class="fas fa-trash-can" href="/delete-post/{{post.id}}"></a>
                                 {% endif %}
                             </div>
                         </div>
