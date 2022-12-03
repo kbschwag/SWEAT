@@ -54,9 +54,7 @@
                 <!--     <ul class="special">
                     <li><a href="/like-post/{{post.id}}" class="icon_class"></a></li>
                 </ul>-->
-                {% if user.id == post.author %}
 
-                {% endif %}
             </div>
         </div>
         <div class="card-body">
@@ -108,12 +106,12 @@
         </div>
         <div class="card-footer text-muted">
             {{post.date_created}}
-
+            {% if user.id == post.author %}
                     <a style="color:blue;"
                         class="fas fa-trash-can"
                         href="/delete-post/{{post.id}}"
                 ></a>
-
+            {% endif %}
         </div>
         <div align="center">
         <a href="/create-post">
