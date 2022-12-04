@@ -1086,16 +1086,16 @@ input[type="submit"]:hover {
 }
 
 .box-area a:nth-child(3) .img-area{
-  background-image: url("/static/images/stretch.jpg");
+  background-image: url("/static/images/injured.jpg");
 }
 .box-area a:nth-child(4) .img-area{
-  background-image: url("https://www.ncaa.com/_flysystem/public-s3/styles/large_16x9/public-s3/thumbnails/2021-03/O%27Brien.jpeg?h=ad87a5e9&itok=0KY4Hg3u");
+  background-image: url("/static/images/stretch.jpg");
 }
 .box-area a:nth-child(5) .img-area{
-  background-image: url("https://vmrw8k5h.tinifycdn.com/news/wp-content/uploads/2022/03/virginia-200-mr-2022-wncaasd-0151-Edit.jpg");
+  background-image: url("/static/images/jumper.jpg");
 }
 .box-area a:nth-child(6) .img-area{
-  background-image: url("https://www.hartpury.ac.uk/media/1130/college-academy-mens-rugby-shot.jpg?anchor=center&mode=crop&width=1200&height=630&rnd=132405907590000000");
+  background-image: url("/static/images/baseball.jpg");
 }
 .box:hover {
   transform: scale(1.1);
