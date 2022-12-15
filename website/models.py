@@ -33,6 +33,9 @@ class Browsers(db.Model):
     browser = db.Column(db.Text, nullable=True)
 
 
+
+
+
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.Text, nullable=False)

@@ -198,10 +198,13 @@ a:focus,
 
 .posts-header {
     text-align: center;
+    width: 60%;
+    float: right !important;
 }
 
 .container {
     overflow: hidden;
+    width: 100%!important;
 }
 
 
@@ -261,12 +264,13 @@ a:focus,
 section.home-banner {
     height: 101vh;
      z-index:-1;
+     width: 100%;
     position: relative;
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('/static/images/home.jpg')}});
+    background-image: url('/static/images/foot.jpg')}});
 
     transition: all 0.9s ease 0s;
     transition-property: all;
@@ -292,7 +296,7 @@ section.solutions-banner {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("https://www.hamilton.edu/assets/mmlibrary/images/original/washburnwg15d.jpg");
+    background-image: url("/static/images/swimming.jpg");
 }
 
 .solutions-banner-inner {
@@ -308,6 +312,10 @@ section.solutions-banner {
     color: #fff;
 }
 
+.solutions-banner-inner h3 {
+    padding: 100px;
+}
+
 .home-banner-inner {
     position: absolute;
     top: 40%;
@@ -320,14 +328,14 @@ section.solutions-banner {
 }
 
 section.about-banner {
-    height: 50vh;
+    height: 60vh;
      z-index:-1;
     position: relative;
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("https://thumbor.bigedition.com/mia-hamm/F16cHOKdRN-1oq2-wZwWJySMLBA=/800x0/filters:quality(80)/granite-web-prod/86/43/864317cf3a2f4c5b978aee7ee2a1063f.jpeg");
+    background-image: url("/static/images/home.jpg");
 }
 
 .about-banner-inner {
@@ -431,6 +439,7 @@ section.about3-banner {
   font-weight: bold;
   background-color: #000;
   color: #fff;
+  margin: 10px;
 }
 
 .btn-more {
@@ -921,12 +930,7 @@ section.feature-list {
    margin-left: 40px;
 }
 
-form {
-    margin-top: 100px;
-  margin-left: auto;
-   margin-right: auto;
-   width: 100%;
-}
+
 
 
 #browser {
@@ -942,40 +946,209 @@ form {
 .part1 {
     background-color:red;
 }
-
-#form-box {
-    background-color: #F4F1EF;
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-    width: 100%;
-    height: 80vh;
+--*/
+.call-to-action {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.card-text {
-    color:black;
+.input-group {
+  margin-top: 30px;
+  position: relative;
 }
 
-
-
-.card-title {
-    color:black;
-    font-weight:bold;
-    font-size: 24px;
+.input-group .btn-submit {
+  padding: 10.5px 40px !important;
+  position: absolute;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  top: 0;
+  right: 0;
 }
 
-input, textarea {
-  font-size: 1rem;
-  padding: 10px;
-  color: #000;
-  background-color: #E9E6E5;;
+.input-group input {
+  border-radius: 40px;
   border: none;
+  padding-left: 15px;
+  box-shadow: none;
+  display: table-cell;
+}
+
+.footer-menu a {
+  font-size: 14;
+  font-weight: 700;
+  color: #444;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  background: #f4f4f4;
+  padding: 50px 0px;
+}
+
+footer .footer-logo {
+  color: #555;
+  display: block;
+}
+
+footer p.copyright-text {
+  font-weight: 300;
+  font-size: 12px;
+  color: #ffffff;
+  letter-spacing: 3px;
+  margin-top: 15px;
+}
+
+footer p.copyright-text a {
+  color: #282828;
+}
+
+footer p.copyright-text a:hover {
+  text-decoration: none;
+}
+/* Login acount style.*/
+
+#login-form
+{
+  display: none;
+}
+.form-control {
+    width: 80%;
+    margin: auto;
+    float: center;
+    padding: 1rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #A0A0A0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 
-form h1 {
-    color: white;
+.form-box
+{
+    width:70%;
+   height:500px;
+   position:relative;
+   margin:2% auto;
+   background: #C3C3C3;
+   padding:10px;
+    overflow: hidden;
 }
+.button-box
+{
+   width:220px;
+   margin:35px auto;
+   position:relative;
+   box-shadow: 0 0 20px 9px #ff6a001f;
+   border-radius: 30px;
+}
+.toggle-btn
+{
+   padding:10px 30px;
+   cursor:pointer;
+   background:transparent;
+   border:0;
+   outline: none;
+   position: relative;
+}
+
+#btn
+{
+   top: 0;
+   left:0;
+   position: absolute;
+   width: 110px;
+   height: 100%;
+   background: #ff6a001f;
+   border-radius: 30px;
+   transition: .5s;
+}
+.input-group-login
+{
+   top: 150px;
+   position:absolute;
+   width:280px;
+   transition:.5s;
+}
+.input-group-register
+{
+    top: 120px;
+   position:absolute;
+   width:280px;
+   transition:.5s;
+}
+.input-field
+{
+   width: 100%;
+   padding:10px 0;
+   margin:1px 0;
+   border-left:0;
+   border-top:0;
+   border-right:0;
+   border-bottom: 1px solid #919191;
+   outline:none;
+   background: transparent;
+}
+.submit-btn
+{
+   width: 85%;
+   padding: 10px 30px;
+   cursor: pointer;
+   display: block;
+   margin: auto;
+   background: #ff6a001f;
+   border: 0;
+   outline: none;
+   border-radius: 30px;
+}
+.check-box
+{
+   margin: 30px 10px 34px 0;
+}
+
+form {
+    padding: 20px;
+    width: 50%;
+    background-color: #FFF;
+    margin: auto;
+    box-shadow: #fff;
+    border: solid;
+    color: #000;
+    border-radius: 20px;
+    margin-top: 200px;
+}
+
+.signup {
+    margin-top: 100px !important;
+}
+
+#login
+{
+   left:50px;
+}
+#login input
+{
+   color:#000;
+   font-size:15;
+}
+#register
+{
+}
+#register input
+{
+   color:#000;
+   font-size: 15;
+}
+
+
 
 .voice{
     padding-top: 100px;
@@ -997,7 +1170,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: white;
+  background-color: #C3C3C3;
 }
 
 
@@ -1028,6 +1201,9 @@ input[type="submit"]:hover {
 @media only screen and (max-width: 1200px) {
   .box-area {
     grid-template-columns: auto auto;
+  }
+  form {
+  width: 80%;
   }
 }
 
