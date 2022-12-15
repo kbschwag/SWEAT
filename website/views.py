@@ -95,11 +95,11 @@ def posts(username):
 @views.route("/posts_sorted/<browser>")
 @login_required
 def posts_sorted(browser):
-    sorted = Browsers.query.filter_by(browser=browser).first()
+    posts = Post.query.filter_by(browser=browser).all()
     if not sorted:
         flash('No user with that username broswer.', category='error')
         return redirect(url_for('views.view_posts'))
-    posts_sorted=Post.query.filter_by(author=browser.id).all()
+    #posts=Post.query.filter_by(browser=sorted.id).all()
     return render_template("posts_sorted.html", user=current_user, posts=posts, browser=browser)
 
 
