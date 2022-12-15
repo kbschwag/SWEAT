@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
-from .models import Post, User, Comment, Like
+from .models import Post, User, Comment, Like, Browsers
 from . import db
 from markupsafe import Markup
 from jinja2.utils import markupsafe
@@ -34,6 +34,10 @@ def about():
 def community_guidelines():
     return render_template("community_guidelines.html", user=current_user)
 
+@views.route("/solutions")
+@login_required
+def solutions():
+    return render_template("solutions.html", user=current_user)
 
 @views.route("/view_posts/", methods = ["GET"])
 @login_required
@@ -88,15 +92,15 @@ def posts(username):
 
 
 
-# @views.route("/posts_sorted/<browser>")
-# @login_required
-# def posts_sorted(browser):
-#     browser = User.query.filter_by(browser=browser).first()
-#     if not browser:
-#         flash('No user with that username exists.', category='error')
-#         return redirect(url_for('views.view_posts'))
-#     posts_sorted=Browser.query.filter_by(browser=browser).all()
-#     return render_template("posts_sorted.html", user=current_user, browser=browser, username=username)
+@views.route("/posts_sorted/<browser>")
+@login_required
+def posts_sorted(browser):
+    sorted = Browsers.query.filter_by(browser=browser).first()
+    if not sorted:
+        flash('No user with that username broswer.', category='error')
+        return redirect(url_for('views.view_posts'))
+    posts_sorted=Post.query.filter_by(author=browser.id).all()
+    return render_template("posts_sorted.html", user=current_user, posts=posts, browser=browser)
 
 
 @views.route("/create-comment/<post_id>", methods=['POST'])

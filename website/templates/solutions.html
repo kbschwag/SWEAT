@@ -33,51 +33,56 @@
 
 			<div class="solutions-banner-inner">
 
-				<div class="sweat">
-          <i class="fas fa-anchor"></i>
-            <div class="service-img">
-            <img height="100px", width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Eo_circle_yellow_letter-s.svg/2048px-Eo_circle_yellow_letter-s.svg.png">
-          </div>
-            <h3>Be Kind</h3>
-          <p>We really want this to be a safe place for anyone who wants to vent so please respond with good intentions and positivity</p>
-        </div>
+            </div>
 
-        <div class="sweat">
-          <i class="fab fa-android"></i>
-            <div class="service-img">
-            <img height="100px", width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Eo_circle_yellow_letter-w.svg/2048px-Eo_circle_yellow_letter-w.svg.png">
-          </div>
-          <h3>No Vulgar Content</h3>
-          <p>We are allowing cussing as it is a space to vent and get frustration out, but excessive cussing and not related vulgar content will be condemned</p>
-        </div>
+</section>
 
-        <div class="sweat">
-          <i class="fab fa-angellist"></i>
-            <div class="service-img">
-            <img height="100px", width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Eo_circle_yellow_letter-e.svg/1024px-Eo_circle_yellow_letter-e.svg.png">
-          </div>
-          <h3>No Spamming or Advertisement</h3>
-          <p>Any excessive amounts of posts or advertisement of any kind is not allowed</p>
-        </div>
+<section id="banner-contact-us">
 
-                <div class="sweat">
-          <i class="fab fa-angellist"></i>
-            <div class="service-img">
-            <img height="100px", width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Eo_circle_yellow_letter-a.svg/800px-Eo_circle_yellow_letter-a.svg.png">
-          </div>
-          <h3>No Spamming or Advertisement</h3>
-          <p>Any excessive amounts of posts or advertisement of any kind is not allowed</p>
-        </div>
-                <div class="sweat">
-          <i class="fab fa-angellist"></i>
-            <div class="service-img">
-            <img height="100px", width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Eo_circle_yellow_letter-t.svg/800px-Eo_circle_yellow_letter-t.svg.png">
-          </div>
-          <h3>No Spamming or Advertisement</h3>
-          <p>Any excessive amounts of posts or advertisement of any kind is not allowed</p>
-        </div>
+      <div class="banner-contact-us-inner">
 
-			</div>
+      <h2>Contact Us</h2>
+
+
+   <?php include('contact.php'); ?>
+    <!-- Error messages -->
+    <?php if(!empty($response)) {?>
+    <div class="form-group col-12 text-center">
+      <div class="alert text-center <?php echo $response['status']; ?>">
+        <?php echo $response['message']; ?>
+      </div>
+    </div>
+    <?php }?>
+    <!-- Contact form -->
+    <form action="" name="contactForm" id="contactForm" method="post" enctype="multipart/form-data" novalidate>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Enter your name" id="name">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" placeholder="Enter your email" id="email">
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text" class="form-control" placeholder="Enter the topic" name="subject" id="subject">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea class="form-control" rows="4" name="message" placeholder="Enter your message" id="message"></textarea>
+      </div>
+      <div class="form-group">
+        <!-- Google reCAPTCHA block -->
+        <div class="g-recaptcha" data-sitekey="6Lc5cukiAAAAAKTSKVYrgDNqK7EtL7U9jo5DxyX6"></div>
+      </div>
+
+
+      <div class="form-group">
+        <input type="submit" name="send" value="Send" class="btn btn-dark btn-block">
+      </div>
+    </form>
+  </div>
+
 
 </section>
 

@@ -11,9 +11,29 @@
 
 <div class="sidenav">
   <a href="#about">Injured</a>
-  <a href="#services">Freshman</a>
-  <a href="#clients">Clients</a>
-  <a href="#contact">Contact</a>
+  <button class="dropdown-btn">Sport
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Soccer</a>
+    <a href="#">Baseball</a>
+    <a href="#">Basketball</a>
+      <a href="#">Football</a>
+      <a href="#">Swimming</a>
+    <a href="#">Tennis</a>
+    <a href="#">Track</a>
+      <a href="#">Lacrosse</a>
+  </div>
+  <a href="#clients">LGBTQ+</a>
+  <button class="dropdown-btn">Racial Groups
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Black Community</a>
+    <a href="#">Hispanic Community</a>
+    <a href="#">Asian Community</a>
+
+  </div>
   <button class="dropdown-btn">Class
     <i class="fa fa-caret-down"></i>
   </button>
@@ -23,7 +43,7 @@
     <a href="#">Junior</a>
       <a href="#">Senior</a>
   </div>
-  <a href="#contact">Search</a>
+  <a href="#contact">Academic Pressure</a>
 </div>
 
 
@@ -33,6 +53,13 @@
     <div class="card border-dark">
         <div class="card-header d-flex justify-content-between align-items-center">
             <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
+            <a href="/posts_sorted/{{post.browser}}">{{post.browser}}</a>
+            <div id="posts_sorted">
+                <!--{% for x in posts_sorted %}-->
+                <a href="/posts/{{post.posts_sorted.browser}}">{{post.posts_sorted.browser}}</a>
+                <!--{% endfor %}-->
+            </div>
+
             <div>
                                 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
                 <!--                <div class="likelen">{{ post.likes|length }}</div>-->
@@ -59,6 +86,7 @@
         </div>
         <div class="card-body">
             <div href="/posts/{{post.browser}}" class="card-title">{{post.browser}}</div>
+
 <div class="ex1">{{ post.text }}</div>
 
 
