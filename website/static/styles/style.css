@@ -1607,3 +1607,9 @@ label {
 .parallax .bg_two {
  background-image: url('/static/bike2.jpg');
 }
+.ScrollStyle
+{
+    max-height: 150px;
+    overflow-y: scroll;
+    color: black;
+}
