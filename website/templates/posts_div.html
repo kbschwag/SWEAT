@@ -14,7 +14,7 @@
   <button class="dropdown-btn">Sport
     <i class="fa fa-caret-down"></i>
   </button>
-  <ul class="dropdown-container">
+  <div class="dropdown-container">
     <a href="/posts_sorted/soccer">Soccer</a>
     <a href="/posts_sorted/baseball">Baseball</a>
     <a href="/posts_sorted/basketball">Basketball</a>
@@ -23,7 +23,7 @@
     <a href="/posts_sorted/tennis">Tennis</a>
     <a href="/posts_sorted/track">Track</a>
       <a href="/posts_sorted/lacrosse">Lacrosse</a>
-  </ul>
+  </div>
   <a href="/posts_sorted/lgbtq">LGBTQ+</a>
   <button class="dropdown-btn">Racial Groups
     <i class="fa fa-caret-down"></i>
@@ -87,7 +87,11 @@
         <div class="card-body">
             <div href="/posts/{{post.browser}}" class="card-title">{{post.browser}}</div>
 
-            <div class="ScrollStyle">{{ post.text }}</div>
+<div class="ex1">{{ post.text }}</div>
+
+
+
+
             <br/>
             <div class="collapse" id="comments-{{post.id}}">
                    <form class="input-group mb-3" method="POST" action="/create-comment/{{post.id}}">
@@ -138,7 +142,11 @@
             {% endif %}
         </div>
         <div align="center">
-
+        <a href="/create-post">
+            <button type="button" class="btn btn-primary btn-lg">
+                Fill out Form
+            </button>
+        </a>
     </div>
 
     </div>
