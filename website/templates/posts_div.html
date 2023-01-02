@@ -11,9 +11,9 @@
 
 <div class="sidenav">
   <a href="/posts_sorted/injured">Injured</a>
-  <button class="dropdown-btn">Sport
+  <div class="dropdown-btn">Sport
     <i class="fa fa-caret-down"></i>
-  </button>
+  </div>
   <div class="dropdown-container">
     <a href="/posts_sorted/soccer">Soccer</a>
     <a href="/posts_sorted/baseball">Baseball</a>
@@ -141,13 +141,7 @@
                 ></a>
             {% endif %}
         </div>
-        <div align="center">
-        <a href="/create-post">
-            <button type="button" class="btn btn-primary btn-lg">
-                Fill out Form
-            </button>
-        </a>
-    </div>
+
 
     </div>
 
@@ -158,6 +152,13 @@
     {% block footer %}
 
 </div>
+    <div align="center">
+        <a href="/create-post">
+            <button type="button" class="btn btn-main">
+                Fill out Form
+            </button>
+        </a>
+    </div>
 </section>
 
 <script>
