@@ -348,27 +348,18 @@ section.about-banner {
 
 section.about2-banner {
     height: 101vh;
-     z-index:-1;
     position: relative;
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("/static/images/dance.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.about2-banner-inner {
-    position: absolute;
-    top: 70%;
-    left: 0;
-    width: 80%;
-    text-align: center;
-    padding-top: 50px;
-    transform: translateY(-50%);
-    background: rgba(112, 171, 175, 0.9);
-    text-align: left;
-    padding: 40px;
-}
+
 
 section.about3-banner {
     height: 101vh;
@@ -822,6 +813,130 @@ section.feature-list {
 	border:0;
 	outline: none;
 	position: relative;
+}
+
+.testimonial{
+    position: relative;
+    width: 800px;
+    min-width: 350px;
+    min-height: 250px;
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+
+.wrapper{
+    width: 300%;
+    /* 300% 'caz we have 3 cards */
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    transition: 1s;
+}
+
+.tcard{
+    width: 1000px;
+    min-height: 100%;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0 10px;
+}
+
+.card-thumb{
+    width: 70%;
+    height: 250px;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: relative;
+    color: #000;
+}
+
+.client-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.client-name{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    padding: 5px 20px;
+    background: #fff;
+    text-transform: capitalize;
+    font-size: 14px;
+    color: #000;
+}
+
+.tcard-body{
+    width: 120%;
+    min-height: 100%;
+    height: auto;
+    margin-left: 20px;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.review{
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 30px;
+    color: #000;
+}
+
+
+
+.indicators{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.indicators button{
+    background: none;
+    border: none;
+    outline: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: .5s;
+    color: #000;
+}
+
+button.active{
+    width: 40px;
+    border-radius: 50px;
+    background: #fff;
+}
+
+@media (max-width: 800px){
+    .testimonial{
+        width: 50%;
+        margin: auto;
+    }
+    .tcard{
+        flex-direction: column;
+    }
+    .card-thumb{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .tcard-body{
+        width: 100%;
+        min-height: auto;
+        margin-left: 0;
+    }
 }
 
 #btn

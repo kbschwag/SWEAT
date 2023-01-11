@@ -124,21 +124,44 @@
 
 <section class="lazyload about2-banner">
 
-    <div class="about2-banner-inner">
+<div class="testimonial">
+        <div class="wrapper">
+            <div class="tcard">
+                <div class="card-thumb">
+                    <img src="/static/images/parent.jpg" class="client-img" alt="">
+                    <span class="client-name">@proudparent</span>
+                </div>
+                <div class="tcard-body">
+                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
 
-        <div class="container">
-
-            <h1>Student Athlete Mental Awareness</h1>
-
-            <div class="banner-content">
-
-                <p>Made by student athletes for student athletes <br>
-                <h3>Vent Anonymously</h3>
+                </div>
             </div>
-
+            <div class="tcard">
+                <div class="card-thumb">
+                    <img src="/static/images/lgbtq.jpg" class="client-img" alt="">
+                    <span class="client-name">@soccerstar</span>
+                </div>
+                <div class="tcard-body">
+                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
+                </div>
+            </div>
+            <div class="tcard">
+                <div class="card-thumb">
+                    <img src="/static/images/injury.jpg" class="client-img" alt="">
+                    <span class="client-name">@acldestroyer</span>
+                </div>
+                <div class="tcard-body">
+                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
+                </div>
+            </div>
         </div>
-
+        <div class="indicators">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+        </div>
     </div>
+
 
 </section>
 
@@ -241,6 +264,20 @@
 </section>
 
 <script>
+
+const wrapper = document.querySelector('.wrapper');
+const indicators = [...document.querySelectorAll('.indicators button')];
+
+let currentTestimonial = 0; // Default 0
+
+indicators.forEach((item, i) => {
+    item.addEventListener('click', () => {
+        indicators[currentTestimonial].classList.remove('active');
+        wrapper.style.marginLeft = `-${100 * i}%`;
+        item.classList.add('active');
+        currentTestimonial = i;
+    })
+})
     var ml4 = {};
 ml4.opacityIn = [0,1];
 ml4.scaleIn = [0.2, 1];
