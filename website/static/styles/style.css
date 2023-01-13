@@ -1804,9 +1804,12 @@ label {
     overflow-y: scroll;
     color: black;
 }
-.error{
+
+.alert-success{
+    background-color: #90EE90;
     z-index: 999;
 }
-.success{
+.alert-error{
+    background-color: #FF9A98;
     z-index: 999;
 }

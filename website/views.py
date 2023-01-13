@@ -78,7 +78,7 @@ def delete_post(id):
     else:
         db.session.delete(post)
         db.session.commit()
-        flash('Post deleted', 'success')
+        flash('Post deleted', category='success')
     return redirect(url_for('views.view_posts'))
 
 @views.route("/posts/<username>")
