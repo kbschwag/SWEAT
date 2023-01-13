@@ -79,11 +79,18 @@ h5 {
     color: #000;
 }
 
+h6 {
+    color: #70ABAF !important;
+    font-size: 10px;
+    font-weight: bold;
+}
+
 
 h2,
 .h2 {
   font-size: 30px;
   line-height: 35px;
+  text-align:center;
 }
 
 h3,
@@ -371,7 +378,7 @@ section.about2-banner {
 
 
 
-section.about3-banner {
+#resources {
     height: 101vh;
     position: relative;
     background-attachment: fixed;
@@ -379,6 +386,9 @@ section.about3-banner {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("/static/images/tennis.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .community-guidelines {
@@ -828,7 +838,6 @@ section.feature-list {
     padding-bottom: 40px;
     overflow: hidden;
 }
-
 .wrapper{
     width: 300%;
     /* 300% 'caz we have 3 cards */
@@ -905,7 +914,28 @@ section.feature-list {
     transform: translateX(-50%);
 }
 
+.indicators2{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .indicators button{
+    background: none;
+    border: none;
+    outline: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: .5s;
+    color: #000;
+}
+
+.indicators2 button{
     background: none;
     border: none;
     outline: none;
@@ -925,6 +955,46 @@ button.active{
     background: #fff;
 }
 
+.resource{
+    position: relative;
+    width: 800px;
+    min-width: 350px;
+    min-height: 250px;
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+.wrapper1{
+    width: 400%;
+    /* 300% 'caz we have 3 cards */
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    transition: 1s;
+}
+
+.hcard{
+    width: 1000px;
+    min-height: 100%;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0 10px;
+}
+
+.hcard-body{
+    width: 120%;
+    min-height: 100%;
+    height: auto;
+    margin-left: 20px;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+
 @media (max-width: 800px){
     .testimonial{
         width: 50%;
@@ -938,6 +1008,23 @@ button.active{
         border-radius: 10px;
     }
     .tcard-body{
+        width: 100%;
+        min-height: auto;
+        margin-left: 0;
+    }
+
+    .resource{
+        width: 50%;
+        margin: auto;
+    }
+    .hcard{
+        flex-direction: column;
+    }
+    .card-thumb{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .hcard-body{
         width: 100%;
         min-height: auto;
         margin-left: 0;
