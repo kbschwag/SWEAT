@@ -119,6 +119,19 @@ a {
   margin-top: 100px;
 }
 
+.error {
+    z-index: 999;
+}
+
+.success {
+    z-index: 999;
+}
+
+span,
+small {
+    color: #000;
+}
+
 
 /* Fixed sidenav, full height */
 .sidenav {
@@ -259,7 +272,6 @@ a:focus,
 
 section.home-banner {
     height: 101vh;
-     z-index:-1;
      width: 100%;
     position: relative;
     background-attachment: fixed;
@@ -285,7 +297,6 @@ section.home-banner {
 
 section.solutions-banner {
     height: 70vh;
-     z-index:-1;
     position: relative;
     background-attachment: fixed;
     background-attachment: fixed;
@@ -309,7 +320,7 @@ section.solutions-banner {
 }
 
 .solutions-banner-inner h3 {
-    padding: 100px;
+    padding: 25px;
 }
 
 .home-banner-inner {
@@ -325,7 +336,6 @@ section.solutions-banner {
 
 section.about-banner {
     height: 60vh;
-     z-index:-1;
     position: relative;
     background-attachment: fixed;
     background-position: center center;
@@ -363,7 +373,6 @@ section.about2-banner {
 
 section.about3-banner {
     height: 101vh;
-     z-index:-1;
     position: relative;
     background-attachment: fixed;
     background-position: center center;
@@ -474,8 +483,9 @@ section.about3-banner {
 }
 
 .card-title {
-    color: black;
+    color: #A58C50;
     font-weight: bold;
+    font-size: 20px;
 }
 
 .card-footer {
@@ -564,7 +574,6 @@ section.about3-banner {
     margin-top: 100px;
     margin-bottom: 100px;
     padding: 50px;
-    z-index: -10;
     display: block;
     text-align: center;
 }
@@ -634,7 +643,6 @@ section.feature-list {
   -webkit-transform: scale(0.5);
   transform: scale(0.5);
   transition: all .3s;
-  z-index: -1;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
@@ -1287,7 +1295,6 @@ input[type="submit"]:hover {
   transition: .3s;
   margin-top: 50px;
   text-decoration: none;
-  z-index: -1;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -1556,7 +1563,6 @@ label {
     grid-gap: 10px;
     height: 100vh;
     margin: 0 auto;
-    z-index: -2;
 }
 
 .flip-boxes h1 {
@@ -1574,7 +1580,6 @@ label {
   margin: 20px;
   padding: 20px;
   transition: .3s;
-  z-index: -1;
 }
 
 .flip-box img {
