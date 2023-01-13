@@ -59,6 +59,7 @@ def create_post():
 
         if not text:
             flash('Enter the details', category='error')
+
         else:
             post = Post(text=text,categ=categ,author=current_user.id,browser=browser)
             db.session.add(post)
@@ -73,11 +74,11 @@ def delete_post(id):
     if not post:
         flash("Post does not exist.", category='error')
     elif current_user.id == post.id:
-        flash('You do not have permission to delete this post.', category='error')
+        flash('You do not have permission to delete this post.', 'error')
     else:
         db.session.delete(post)
         db.session.commit()
-        flash('Post deleted', category='success')
+        flash('Post deleted', 'success')
     return redirect(url_for('views.view_posts'))
 
 @views.route("/posts/<username>")
