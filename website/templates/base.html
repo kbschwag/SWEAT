@@ -55,7 +55,10 @@
 {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         {% for category, message in messages %}
-           <div class="alert alert-{{ category }}" role="alert"> {{ message }}</div>
+           <div class="alert alert-{{ category }}" role="alert"> {{ message }}
+               <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+           </div>
+
         {% endfor %}
       {% endif %}
     {% endwith %}
@@ -88,11 +91,7 @@
         crossorigin="anonymous"
 ></script>
 
-<script>
-    function delete_flash(flash){
-        $(flash).parent().remove()
-    }
-</script>
+
 
 <script
         type="text/javascript"
