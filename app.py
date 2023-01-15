@@ -10,7 +10,7 @@ from website import create_app
 
 if __name__ == "__main__":
     app = create_app()
-    app.run(debug=True, host= '192.168.1.243')
+    app.run(debug=True)
 
 from flask import Flask, render_template, request, redirect
 from flask import *

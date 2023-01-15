@@ -60,19 +60,19 @@ h5,
 h6 {
   font-weight: 300;
   margin: 0px;
-  color: #A58C50;
 }
 
 h1 {
     letter-spacing: 0.3em;
      font-size: 40px;
+     color: #A58C50;
 }
 
 .home-banner-inner h1{
     font-size: 100px;
 }
 h4 {
-    color: #FFF;
+    color: #99E1D9;
 }
 
 h5 {
@@ -233,7 +233,7 @@ a:focus,
     font-size: 40px;
   }
 
-.flip-boxes {
+#flip-boxes {
     padding: 10px;
     display: grid !important;
     grid-template-columns: auto !important;
@@ -259,13 +259,12 @@ a:focus,
 
 .heading {
   text-align: center;
-  color: #A58C50;
+  color: #70ABAF !important;
   padding-bottom: 25px;
 }
 
 .heading h2 {
-
-  text-transform: capitalize;
+text-transform: capitalize !important;
   font-weight: 700;
   font-size: 40px;
   line-height: 40px;
@@ -322,12 +321,16 @@ section.solutions-banner {
     text-align: center;
     padding-top: 70px;
     transform: translateY(-50%);
-    background-color: rgba( 0, 0, 0, 0.7);
     color: #fff;
 }
 
 .solutions-banner-inner h3 {
     padding: 25px;
+}
+
+.g-recaptcha {
+    transform:scale(0.77);
+    transform-origin:0 0;
 }
 
 .home-banner-inner {
@@ -949,11 +952,7 @@ section.feature-list {
     color: #000;
 }
 
-button.active{
-    width: 40px;
-    border-radius: 50px;
-    background: #fff;
-}
+
 
 .resource{
     position: relative;
@@ -1517,10 +1516,10 @@ input[type="submit"]:hover {
   background: #ddd;
 }
 .service i{
-  color: #3498db;
-  font-size: 34px;
+  color: #70ABAF;
+  font-size: 68px;
   margin-bottom: 30px;
-}
+  }
 .service h2{
   font-size: 18px;
   text-transform: uppercase;
@@ -1533,13 +1532,6 @@ input[type="submit"]:hover {
   font-weight: 500;
 }
 
-service img{
-    padding: 50px;
-}
-
-.service-img {
-    padding: 50px;
-}
 @media screen and (max-width: 800px) {
   .service{
     width: 50%;
@@ -1643,7 +1635,7 @@ label {
     margin-right: 3px;
 }
 
-.flip-boxes {
+#flip-boxes {
     display: grid;
     grid-template-columns: auto auto auto;
     text-align: center;
@@ -1652,7 +1644,7 @@ label {
     margin: 0 auto;
 }
 
-.flip-boxes h1 {
+#flip-boxes h1 {
     font-size: 40px;
 }
 
@@ -1715,7 +1707,7 @@ label {
   padding: 20px;
 }
 
-.FAQs {
+#FAQs {
     padding-top: 50px;
 }
 
