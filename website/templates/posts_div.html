@@ -57,12 +57,11 @@
     <div class="card border-dark">
         <div class="card-header d-flex justify-content-between align-items-center">
             <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
+            {% if post.consent == "yes" %}
+                <a class="fa-regular fa-handshake"></a>
+            {% endif %}
 
-            <!--<div id="posts_sorted">
-                {% for x in posts_sorted %}
-                <a href="/posts/{{post.posts_sorted.browser}}">{{post.posts_sorted.browser}}</a>
-                {% endfor %}
-            </div>-->
+
 
             <div>
                                 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
@@ -93,7 +92,7 @@
             <a href="/posts_sorted/{{post.browser}}">See Other {{post.browser}} Posts <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
 
 
-<div class="ex1" >{{ post.text }}</div>
+        <div class="ex1" >{{ post.text }}</div>
 
 
 

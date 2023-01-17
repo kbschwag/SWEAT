@@ -8,6 +8,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
     browser = db.Column(db.String(150))
+    consent = db.Column(db.String(150))
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     posts = db.relationship('Post', backref='user', passive_deletes=True)
     comments = db.relationship('Comment', backref='user', passive_deletes=True)
@@ -17,10 +18,8 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.Text, nullable=False)
     categ = db.Column(db.Text, nullable=True)
-    #browser = db.Column(db.Text, nullable=True)
-    browser = db.Column(db.String(150), unique=True)
-    #browser = db.Column(db.Integer, db.ForeignKey('browser.id', ondelete="CASCADE"), nullable=False)
-
+    browser = db.Column(db.String(150), unique=False)
+    consent = db.Column(db.String(150), unique=False)
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     author = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"), nullable=False)
     comments = db.relationship('Comment', backref='post', passive_deletes=True)
@@ -31,7 +30,15 @@ class Browsers(db.Model):
     text = db.Column(db.Text, nullable=False)
     categ = db.Column(db.Text, nullable=True)
     browser = db.Column(db.Text, nullable=True)
+    consent = db.Column(db.Text, nullable=True)
 
+
+class Consents(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.Text, nullable=False)
+    categ = db.Column(db.Text, nullable=True)
+    browser = db.Column(db.Text, nullable=True)
+    consent = db.Column(db.Text, nullable=True)
 
 
 
