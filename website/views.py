@@ -29,6 +29,11 @@ def home():
 def about():
     return render_template("about_us.html", user=current_user)
 
+@views.route("/terms")
+
+def terms():
+    return render_template("terms.html", user=current_user)
+
 @views.route("/community_guidelines")
 
 def community_guidelines():
