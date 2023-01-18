@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
-from .models import Post, User, Comment, Like, Browsers
+from .models import Post, User, Comment, Like, Browsers, Consents
 from . import db
 from markupsafe import Markup
 from jinja2.utils import markupsafe
@@ -29,6 +29,11 @@ def home():
 def about():
     return render_template("about_us.html", user=current_user)
 
+@views.route("/terms")
+
+def terms():
+    return render_template("terms.html", user=current_user)
+
 @views.route("/community_guidelines")
 
 def community_guidelines():
@@ -56,12 +61,13 @@ def create_post():
         text = request.form.get('text')
         categ = request.form.get('categ')
         browser = request.form.get('browser')
+        consent = request.form.get('consent')
 
         if not text:
             flash('Enter the details', category='error')
 
         else:
-            post = Post(text=text,categ=categ,author=current_user.id,browser=browser)
+            post = Post(text=text,categ=categ,author=current_user.id,browser=browser, consent=consent)
             db.session.add(post)
             db.session.commit()
             flash('The data is submitted', category='success')

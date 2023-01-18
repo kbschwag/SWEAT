@@ -67,6 +67,11 @@ content %}
       <div class="g-recaptcha" data-sitekey="{{ sitekey }}"></div>
     <div align="center">
         {{ recaptcha }}
+
+        <a href="/terms" class="btn btn-main btn-main-sm" target="_blank">Terms and Conditions</a>
+        <form action="/action_page.php">
+  I have read the terms and conditions: <input type="checkbox" id="myCheck" name="test" required>
+</form>
       <button class="btn btn-main btn-main-sm" type="submit">Sign Up</button>
     </div>
   </div>
