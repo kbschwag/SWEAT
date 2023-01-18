@@ -24,8 +24,10 @@ content %}
 </head>
 
 <form method="POST" class = "signup">
-  <h3 align="center">Sign Up</h3>
-    <h6>DISCLAIMER: SIGNING UP IS FREE AND EASY TO DO AND WE WILL NOT SEND YOU UNSOLICITED EMAILS.</h6>
+  <h1 align="center">Sign Up</h1>
+      <br>
+    <h6 align="center">DISCLAIMER: SIGNING UP IS FREE AND EASY TO DO AND WE WILL NOT SEND YOU UNSOLICITED EMAILS.</h6>
+
   <div class="form-group">
     <label for="email">Email Address</label>
     <input
@@ -36,13 +38,13 @@ content %}
       placeholder="Enter Email"
     />
     <label for="username">Username</label>
-      <h6>Please Do Not Use Real Name</h6>
+
     <input
       type="text"
       id="username"
       name="username"
       class="form-control"
-      placeholder="Enter Username"
+      placeholder="Enter Username (PLEASE DO NOT USE REAL NAME, KEEP IT ANONYMOUS)"
     />
     <label for="password1">Password</label>
     <input
@@ -72,8 +74,10 @@ content %}
         <form action="/action_page.php">
    <input type="checkbox" id="myCheck" name="test" required> I have read the <a href="/terms" target="_blank">terms and conditions</a>:
 </form>
+        <br>
       <button class="btn btn-main btn-main-sm" type="submit">Sign Up</button>
     </div>
   </div>
 </form>
+<p align="center">Already have an account? <a href="/login">Login!</a></p>
 {% endblock %}

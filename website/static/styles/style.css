@@ -1191,9 +1191,9 @@ footer p.copyright-text a:hover {
   display: none;
 }
 .form-control {
-    width: 80%;
+    width: 100%;
     margin: auto;
-    float: center;
+
     padding: 1rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -1201,7 +1201,7 @@ footer p.copyright-text a:hover {
     color: #000;
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid #A0A0A0;
+    border: 1px solid #A0A0A0;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -1298,7 +1298,6 @@ form {
     box-shadow: #fff;
     border: solid;
     color: #000;
-    border-radius: 20px;
     margin-top: 200px;
 }
 
@@ -1336,7 +1335,6 @@ input, textarea:focus {
 }
 
 label {
-  padding: 10px;
   text-align: right;
 }
 
@@ -1622,9 +1620,6 @@ input[type="submit"]:hover {
     text-align: right;
 }
 
-label {
-    margin-right: 3px;
-}
 
 #flip-boxes {
     display: grid;

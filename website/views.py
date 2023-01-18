@@ -39,16 +39,23 @@ def terms():
 def community_guidelines():
     return render_template("community_guidelines.html", user=current_user)
 
-@views.route("/solutions")
+@views.route("/contact-us")
 @login_required
-def solutions():
-    return render_template("solutions.html", user=current_user)
+def contact():
+    return render_template("contact-us.html", user=current_user)
 
 @views.route("/view_posts/", methods = ["GET"])
 @login_required
 def view_posts():
     posts = Post.query.all()
     return render_template("view_posts.html", user=current_user, posts=posts)
+
+@views.route("/survey/")
+
+def survey():
+    return render_template("survey.html", user=current_user)
+
+
 
 
 
