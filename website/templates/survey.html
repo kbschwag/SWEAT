@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %} {% block title %}Home{% endblock %}
+{% block content%}
 
+
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SIP</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Importing fonts -->
+    <!-- Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+    <!-- Importing CSSs -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/owl-carousel/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/magnific-popup/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+
+
+</head>
+
+<body id="body">
+
+    <!-- Main body -->
+
+<section class="lazyload solutions-banner"> <div class="home-banner-inner">
+
+        <div class="container">
+
+            <h1 align=center">Student Athlete Survey</h1>
+
+            <br>
+                <h4>The quiz below is another way for us to understand our users, please answer these questions honestly. The feedback will be open, so you can see the results too!</h4>
+
+        </div>
+
+    </div>
+
+</section>
+    <div>
+        <a data-quiz="QH0WCNPZ1" data-type=4 href="https://poll-maker.com/QH0WCNPZ1">Loading...</a><script>(function(i,s,o,g,r,a,m){var ql=document.querySelectorAll('A[quiz],DIV[quiz],A[data-quiz],DIV[data-quiz]'); if(ql){if(ql.length){for(var k=0;k<ql.length;k++){ql[k].id='quiz-embed-'+k;ql[k].href="javascript:var i=document.getElementById('quiz-embed-"+k+"');try{qz.startQuiz(i)}catch(e){i.start=1;i.style.cursor='wait';i.style.opacity='0.5'};void(0);"}}};i['QP']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.poll-maker.com/3012/CDN/quiz-embed-v1.js','qp');</script>
+    </div>
+<script>
+
+</script>
 </body>
 </html>
+{% endblock %}

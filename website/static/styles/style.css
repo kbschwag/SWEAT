@@ -302,7 +302,7 @@ section.home-banner {
 }
 
 section.solutions-banner {
-    height: 150vh;
+    height: 100vh;
     position: relative;
     background-attachment: fixed;
     background-attachment: fixed;
@@ -1064,11 +1064,10 @@ section.feature-list {
 {
 	width: 100%;
 	padding:10px 0;
-	margin:1px 0;
 	border-left:0;
 	border-top:0;
 	border-right:0;
-	border-bottom: 1px solid #919191;
+	border: 1px solid #919191;
 	outline:none;
 	background: transparent;
 }
