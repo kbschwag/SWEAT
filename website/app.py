@@ -1,15 +1,19 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from views import views
-from auth import auth
-from models import User
-
-db = SQLAlchemy()
+from routes.views import views
+from routes.auth import auth
+from os import getenv
+from models import db, User
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "helloworld"
-app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+
+# Selects the database based on the environment (allows dev to use sqlite and prod to use postgres)
+if getenv('FLASK_ENV') == 'development':
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')
+
 db.init_app(app)
 
 with app.app_context():
