@@ -1,0 +1,6 @@
+Flask
+Flask-reCaptcha
+Flask-WTF
+MarkupSafe
+Flask-SQLAlchemy
+Flask-Login
