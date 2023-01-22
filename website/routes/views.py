@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
-from models import Post, User, Comment, Like, Browsers, Consents
-from app import db
+from models import Post, User, Comment, Like, Browsers, Consents, db
 from markupsafe import Markup
 from jinja2.utils import markupsafe
 markupsafe.Markup()
