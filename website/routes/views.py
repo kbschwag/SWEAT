@@ -49,7 +49,7 @@ def contact():
 @views.route("/view_posts/", methods=["GET"])
 @login_required
 def view_posts():
-    posts = Post.query.all()
+    posts = Post.query.order_by(Post.date_created.desc()).all()
     return render_template("view_posts.html", user=current_user, posts=posts)
 
 
