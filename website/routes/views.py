@@ -91,7 +91,7 @@ def delete_post(id):
     post = Post.query.filter_by(id=id).first()
     if not post:
         flash("Post does not exist.", category='error')
-    elif current_user.id == post.id:
+    elif current_user.id != post.author:
         flash('You do not have permission to delete this post.', 'error')
     else:
         db.session.delete(post)
