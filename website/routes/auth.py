@@ -1,22 +1,19 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash
-from models import db, User
+from flask import Blueprint, render_template, redirect, url_for, request, flash, current_app, json
+from models import db, User, Verification
 from flask_login import login_user, logout_user, login_required, current_user
-from flask_wtf import RecaptchaField
-from flask import *
-from flask_recaptcha import ReCaptcha
 from werkzeug.security import generate_password_hash, check_password_hash
 import  re
 import requests
+import secrets
+from mail.mail import send_templated_email
 
 auth = Blueprint("auth", __name__)
-
-
+    
 @auth.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form.get("email")
         password = request.form.get("password")
-        recaptcha = RecaptchaField()
 
         user = User.query.filter_by(email=email).first()
         if user:
@@ -67,16 +64,48 @@ def sign_up():
                 new_user = User(email=email, username=username,
                                 password=generate_password_hash(password1, method='sha256'))
                 db.session.add(new_user)
+
                 db.session.commit()
+                
+                token = secrets.token_urlsafe(16)
+                new_verification = Verification(user_id=new_user.id, intent="verify-email", token=token)
+                db.session.add(new_verification)
+
+                send_templated_email(
+                    email,
+                    "new_user.html",
+                    {
+                        "subject": "Verify your email",
+                        "link": url_for('auth.verify_email', token=token)
+                    }
+                )
+
+                db.session.commit()
+
                 login_user(new_user, remember=True)
-                flash('User created!', category='success')
+                flash('Success! Verify your email before posting.', category='success')
                 return redirect(url_for('views.home'))
-            elif (1 == 1):
+            else:
                 # Log invalid attempts
                 status = "Sorry ! Bots are not allowed."
                 flash(status, category='error')
 
     return render_template("signup.html", user=current_user)
+
+@auth.route("/verify-email", methods=['GET', 'POST'])
+def verify_email():
+    token = request.args.get('token')
+    verification = Verification.query.filter_by(token=token).first()
+    if verification:
+        user = User.query.filter_by(id=verification.user_id).first()
+        user.email_verified = True
+        db.session.delete(verification)
+        db.session.commit()
+        flash('Email verified!', category='success')
+        return redirect(url_for('views.home'))
+    else:
+        flash('Invalid token!', category='error')
+        return redirect(url_for('views.home'))
 
 def is_human(captcha_response):
     """ Validating recaptcha response from google server
