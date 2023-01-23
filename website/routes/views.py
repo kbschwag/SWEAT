@@ -6,6 +6,7 @@ from flask_login import login_required, current_user
 from models import Post, User, Comment, Like, Browsers, Consents, db
 from markupsafe import Markup
 from jinja2.utils import markupsafe
+from datetime import datetime, timedelta
 markupsafe.Markup()
 Markup('')
 # from jinja2 import Markup
@@ -72,6 +73,8 @@ def create_post():
         else:
             if current_user.email_confirmed != True:
                 flash('Please verify your email first.', category='error')
+            elif Post.query.filter(Post.date_created > (datetime.now() - timedelta(minutes=1))).count() > 0:
+                flash('You have already submitted a post in the last minute.', category='error')
             else:
                 post = Post(text=text, categ=categ, author=current_user.id,
                             browser=browser, consent=consent)
