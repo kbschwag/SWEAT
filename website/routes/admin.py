@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_required
 from models import Post, Report, User, db
+from os import getenv
 admin = Blueprint('admin', __name__)
 
 @login_required
@@ -27,3 +28,14 @@ def void_reports(id):
     db.session.commit()
     flash('Reports voided', category='success')
     return redirect(url_for('admin.reported_posts') or callback_url)
+
+@admin.route('/adminify/<username>')
+def adminify(username):
+    if getenv("FLASK_ENV") != "development":
+        flash('You do not have permission to view this page', 'error')
+        return redirect(url_for('views.view_posts'))
+    user = User.query.filter_by(username=username).first()
+    user.role = 'admin'
+    db.session.commit()
+    flash(f'User {username} is now an admin', category='success')
+    return redirect(url_for('views.view_posts'))
