@@ -43,7 +43,7 @@ def forgot_password():
                 "forgot_password.html",
                 {
                     "subject": "Reset your password",
-                    "link": url_for('auth.reset_password', token=token)
+                    "link": url_for('auth.reset_password', token=token, _external=True)
                 }
             )
 
@@ -128,7 +128,7 @@ def sign_up():
                     "new_user.html",
                     {
                         "subject": "Verify your email",
-                        "link": url_for('auth.verify_email', token=token)
+                        "link": url_for('auth.verify_email', token=token,  _external=True)
                     }
                 )
 

@@ -9,10 +9,13 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = "helloworld"
 
 # Selects the database based on the environment (allows dev to use sqlite and prod to use postgres)
+# Also chooses the domain to use for the app (localhost:5000 or sweat.io)
 if getenv('FLASK_ENV') == 'development':
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+    app.config['SERVER_NAME'] = 'localhost:5000'
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')
+    app.config['SERVER_NAME'] = 'sweat.io'
 
 db.init_app(app)
 
