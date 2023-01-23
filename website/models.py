@@ -16,12 +16,19 @@ class User(db.Model, UserMixin):
     posts = db.relationship('Post', backref='user', passive_deletes=True)
     comments = db.relationship('Comment', backref='user', passive_deletes=True)
     likes = db.relationship('Like', backref='user', passive_deletes=True)
+    role = db.Column(db.String(150), nullable=False, default='user')
 
 class Verification(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     intent = db.Column(db.String(150), unique=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     token = db.Column(db.String(150), unique=True)
+    date_created = db.Column(db.DateTime(timezone=True), default=datetime.now())
+
+class Report(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id', ondelete="CASCADE"), nullable=False)
+    reporting_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     date_created = db.Column(db.DateTime(timezone=True), default=datetime.now())
 
 class Post(db.Model):

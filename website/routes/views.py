@@ -3,7 +3,7 @@ from flask_recaptcha import ReCaptcha
 from flask import *
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
-from models import Post, User, Comment, Like, Browsers, Consents, db
+from models import Post, User, Comment, Like, Browsers, Consents, Report, db
 from markupsafe import Markup
 from jinja2.utils import markupsafe
 from datetime import datetime, timedelta
@@ -50,6 +50,7 @@ def contact():
 @login_required
 def view_posts():
     posts = Post.query.order_by(Post.date_created.desc()).all()
+    print(posts)
     return render_template("view_posts.html", user=current_user, posts=posts)
 
 
@@ -89,14 +90,34 @@ def create_post():
 @login_required
 def delete_post(id):
     post = Post.query.filter_by(id=id).first()
+    callback_url = request.args.get('callback_url')
     if not post:
         flash("Post does not exist.", category='error')
-    elif current_user.id != post.author:
+    elif current_user.id != post.author and current_user.role != 'admin':
         flash('You do not have permission to delete this post.', 'error')
     else:
         db.session.delete(post)
         db.session.commit()
         flash('Post deleted', category='success')
+    return redirect(callback_url or url_for('views.view_posts'))
+
+@views.route("/report-post/<id>")
+@login_required
+def report_post(id):
+    post = Post.query.filter_by(id=id).first()
+    if not post:
+        flash("Post does not exist.", category='error')
+    elif current_user.id == post.author:
+        flash('You cannot report your own post.', 'error')
+    elif Report.query.filter_by(post_id=id).filter_by(reporting_user_id=current_user.id).count() > 0:
+        flash('You have already reported this post.', 'error')
+    elif Report.query.filter_by(reporting_user_id=current_user.id).filter(Report.date_created > (datetime.now() - timedelta(minutes=1))).count() > 0:
+        flash('You have already reported a post in the last minute.', 'error')
+    else:
+        report = Report(post_id=id, reporting_user_id=current_user.id)
+        db.session.add(report)
+        db.session.commit()
+        flash('Post reported', category='success')
     return redirect(url_for('views.view_posts'))
 
 
