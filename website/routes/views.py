@@ -66,14 +66,14 @@ def create_post():
         text = request.form.get('text')
         categ = request.form.get('categ')
         browser = request.form.get('browser')
-        consent = request.form.get('consent')
+        consent = not request.form.get('consent')
 
         if not text:
             flash('Enter the details', category='error')
         else:
             if current_user.email_confirmed != True:
                 flash('Please verify your email first.', category='error')
-            elif Post.query.filter(Post.date_created > (datetime.now() - timedelta(minutes=1))).count() > 0:
+            elif Post.query.filter(Post.date_created > (datetime.now() - timedelta(minutes=1))).filter(Post.author == current_user.id).count() > 0:
                 flash('You have already submitted a post in the last minute.', category='error')
             else:
                 post = Post(text=text, categ=categ, author=current_user.id,

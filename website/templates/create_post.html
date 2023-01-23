@@ -1,50 +1,17 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %}
 {% block content%}
-<!-- Created a form which takes the input from the user -->
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SIP</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Importing fonts -->
-    <!-- Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400i|Source+Sans+Pro:300,400,600,700"
-          rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
-
-    <!-- Importing CSSs -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/owl-carousel/owl.carousel.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/magnific-popup/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
-    <script src="{{url_for('static', filename='main.js')}}"></script>
-
-</head>
 
 <body>
-
-<form method='POST' class="signup">
+<form method='POST'>
+    <h1 style="color: #fff;">Create a Post</h1>
     <div>
-
-        <div class="heading">
-            <h2>Create a Post</h2>
-        </div>
-        <br/>
-        <form action="/action_page.php">
-            <!--- Question 1  -->
-
-            <p align="center"> Feel free to rant, write what's on your mind, or tell your story and how you've been
-                affected to the world. Let's come together to talk about the struggles as a student athlete and talk
-                about
-                mental health </p>
-
-            <form class="subject" action="/action_page.php" method="get">
-                <label for="browser">Topic</label>
-                <input list="browsers" name="browser" id="browser">
+        <div class="form-step">
+            <div class="form-step-box">
+                <p>📃</p>
+            </div>
+            <div class="form-step-contents">
+                <p class="form-step-primary">Category</p>
+                <input placeholder="Select one" required list="browsers" name="browser">
                 <datalist id="browsers">
                     <option value="Freshman">
                     <option value="Sophomore">
@@ -65,33 +32,27 @@
                     <option value="Swimming">
                     <option value="Football">
                 </datalist>
-
-                <br/>
-
-                <label for="consent">Do you give us consent to share your story on
-                our social media pages(anonymously without your username/email).</label>
-                <select name="consent" id="consent">
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
-                </select>
-
-                <textarea name="text" id="text" class="form-control"></textarea>
-                <br/>
-
-                <br>
-                <input class="btn btn-main btn-main-sm" type="submit">
-
-            </form>
-            <br/>
-
-            <!DOCTYPE html>
-
-        </form>
+            </div>
+        </div>
+        <div class="form-step">
+            <div class="form-step-box">
+                <p>✏️</p>
+            </div>
+            <div class="form-step-contents">
+                <p class="form-step-primary">Your Message</p>
+                <p>Feel free to rant, write what's on your mind, or tell your story and how you've been affected to the world.</p>
+            </div>
+        </div>
+        <textarea name="text" placeholder="Share your thoughts..." required class="post-create-textarea"></textarea>
+        <div class="post-create-submit">
+            <button type="submit">Submit</button>
+            <p>By submitting, you agree our Community Policy as well as to have your content featured on our webpage.</p>
+        </div>
+        <div class="post-create-consent">
+            <p><input type="checkbox" name="consent" /> Revoke consent for sharing content on social media pages?</p>
+        </div>
     </div>
-
-
 </form>
 </body>
-</html>
 {% endblock %}
 

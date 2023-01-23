@@ -549,7 +549,8 @@ section.about2-banner {
 /* navigation */
 
 .navbar{
-    /* position: fixed; */
+    position: sticky;
+    top: 0;
     background-color: #000;
     width: 100%;
     z-index: 1;
@@ -1301,7 +1302,7 @@ footer p.copyright-text a:hover {
    margin: 30px 10px 34px 0;
 }
 
-form {
+form.legacy-form {
     padding: 20px;
     width: 50%;
     background-color: #FFF;
@@ -2048,4 +2049,89 @@ hr {
   .send-button {
     width: 99%;
   }
+}
+
+.form-step {
+  display: flex;
+  align-items: center;
+  margin: 35px;
+}
+
+.form-step-box {
+  height: 85px;
+  width: 85px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.form-step-box>p {
+  font-size: 35px;
+  margin: 0;
+}
+
+.form-step-contents {
+  margin-left: 20px;
+}
+
+.form-step-contents>p {
+  margin: 0;
+  max-width: 550px;
+}
+
+p.form-step-primary {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-step-contents>input[list="browsers"] {
+  border: 0;
+  padding: 3px 15px;
+  margin: 5px 0;
+  border-radius: 8px;
+  width: 250px;
+  font-size: 18px;
+  background-color: rgba(255,255,255,0.63);
+}
+
+.post-create-textarea {
+  margin: 0 35px;
+  height: 300px;
+  width: 75vw;
+  resize: none;
+  font-size: 18px;
+  padding: 30px 35px;
+  border-radius: 8px;
+  transition: 0.1s ease;
+  background-color: rgba(255,255,255,0.63);
+}
+
+
+
+.post-create-submit {
+  margin: 15px 35px;
+  display: flex;
+  align-items: center;
+}
+
+.post-create-submit>button {
+  background-color: #70abaf;
+  border: 0;
+  color: white;
+  padding: 15px 35px;
+  font-size: 25px;
+  border-radius: 8px;
+}
+
+.post-create-submit>p {
+  max-width: 500px;
+  margin: 0 15px;
+}
+
+.post-create-consent {
+  opacity: 0.4;
+  margin-left: 35px;
 }
