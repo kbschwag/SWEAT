@@ -549,7 +549,7 @@ section.about2-banner {
 /* navigation */
 
 .navbar{
-    position: fixed;
+    /* position: fixed; */
     background-color: #000;
     width: 100%;
     z-index: 1;
