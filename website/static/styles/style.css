@@ -146,11 +146,13 @@ small {
    position: fixed;
    width: 30%;
    height: 100%;
-
+  transition: .5s ease;
   top: 0;
   left: 0;
+  z-index: 5;
   background-color: #000;
   overflow-x: hidden;
+  min-width: 200px;
 }
 
 /* Style the sidenav links and the dropdown button */
@@ -553,7 +555,7 @@ section.about2-banner {
     top: 0;
     background-color: #000;
     width: 100%;
-    z-index: 1;
+    z-index: 20;
     align-items: right;
 }
 
@@ -2131,6 +2133,14 @@ p.form-step-primary {
   margin-left: 35px;
 }
 
+.mobile-x {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   .box-area {
     grid-template-columns: auto;
@@ -2172,5 +2182,64 @@ p.form-step-primary {
   .form-step-contents>input[list="browsers"] {
     width: max-content;
   }
+
+  .border-dark {
+      float: left;
+      width: 100%;
+  }
+
+  .posts-header {
+      float: left;
+      width: 100%;
+  }
+
+  .sidenav {
+    transform: translateX(-100%);
+  }
+
+  .mobile-x {
+    position: absolute;
+    display: block;
+    font-size: 25px;
+    top: 45px;
+    left: 0;
+    z-index: 100;
+    padding: 10px;
+    color: #A58C50;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobile-x:hover {
+    color: #ff0000;
+  }
+
+  .mobile-x>span {
+    color: rgb(120, 120, 120);
+    font-size: 15px;
+    margin-left: 5px;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: absolute;
+    top: 60px;
+    width: 55px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 12px;
+    background-color: #70ABAF;
+    z-index: 5;
+  }
+
+  .mobile-menu>i {
+    color: black;
+    font-size: 20px;
+  }
+
+
 }
 

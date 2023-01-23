@@ -1,195 +1,194 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %}
+
 <head>
     <script src="https://kit.fontawesome.com/6b02633b51.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <script>
+        function hideSidebar() {
+            document.querySelector('.sidenav').style.transform = "translateX(-100%)";
+        }
 
+        function showSidebar() {
+            document.querySelector('.sidenav').style.transform = "translateX(0%)";
+        }
+    </script>
 </head>
+
 <body>
 
-<section class="posts-page">
+    <section class="posts-page">
 
-<div class="sidenav">
-  <a href="/posts_sorted/Injured">Injured</a>
-  <button class="dropdown-btn">Sport
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="/posts_sorted/Soccer">Soccer</a>
-    <a href="/posts_sorted/Baseball">Baseball</a>
-    <a href="/posts_sorted/Basketball">Basketball</a>
-      <a href="/posts_sorted/Football">Football</a>
-      <a href="/posts_sorted/Swimming">Swimming</a>
-    <a href="/posts_sorted/Tennis">Tennis</a>
-    <a href="/posts_sorted/Track">Track</a>
-      <a href="/posts_sorted/Lacrosse">Lacrosse</a>
+        <div class="mobile-menu" onclick="showSidebar()">
+            <i data-bs-toggle="collapse" class="fa-solid fa-filter"></i>
+        </div>
 
-  </div>
-  <a href="/posts_sorted/lgbtq">LGBTQ+</a>
-  <button class="dropdown-btn">Ethnic Groups
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="/posts_sorted/Blacks">Black Community</a>
-    <a href="/posts_sorted/Hispanics">Hispanic Community</a>
-    <a href="/posts_sorted/Asians">Asian Community</a>
-    <a href="/posts_sorted/Mixed">Mixed Community</a>
-  </div>
-  <button class="dropdown-btn">Class
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="/posts_sorted/Freshman">Freshman</a>
-    <a href="/posts_sorted/Sophomore">Sophomore</a>
-    <a href="/posts_sorted/Junior">Junior</a>
-      <a href="/posts_sorted/Senior">Senior</a>
-  </div>
-  <a href="/posts_sorted/Academic">Academic Pressure</a>
-    <a href="/posts_sorted/Parents">Parents</a>
-    <a href="/posts_sorted/Religion">Religion</a>
-    <a href="/posts_sorted/Financial">Financial</a>
-</div>
+        <div class="sidenav">
+            <div class="mobile-x" onclick="hideSidebar()">X</div>
+            <a href="/posts_sorted/Injured">Injured</a>
+            <button class="dropdown-btn">Sport
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/posts_sorted/Soccer">Soccer</a>
+                <a href="/posts_sorted/Baseball">Baseball</a>
+                <a href="/posts_sorted/Basketball">Basketball</a>
+                <a href="/posts_sorted/Football">Football</a>
+                <a href="/posts_sorted/Swimming">Swimming</a>
+                <a href="/posts_sorted/Tennis">Tennis</a>
+                <a href="/posts_sorted/Track">Track</a>
+                <a href="/posts_sorted/Lacrosse">Lacrosse</a>
 
-
-<div id="posts">
-    <h1 class="posts-header">{% block header %}Posts{% endblock %}</h1>
-    {% for post in posts %}
-    <div class="card border-dark">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
-            {% if post.consent %}
-                <a class="fa-regular fa-handshake"></a>
-            {% endif %}
+            </div>
+            <a href="/posts_sorted/lgbtq">LGBTQ+</a>
+            <button class="dropdown-btn">Ethnic Groups
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/posts_sorted/Blacks">Black Community</a>
+                <a href="/posts_sorted/Hispanics">Hispanic Community</a>
+                <a href="/posts_sorted/Asians">Asian Community</a>
+                <a href="/posts_sorted/Mixed">Mixed Community</a>
+            </div>
+            <button class="dropdown-btn">Class
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/posts_sorted/Freshman">Freshman</a>
+                <a href="/posts_sorted/Sophomore">Sophomore</a>
+                <a href="/posts_sorted/Junior">Junior</a>
+                <a href="/posts_sorted/Senior">Senior</a>
+            </div>
+            <a href="/posts_sorted/Academic">Academic Pressure</a>
+            <a href="/posts_sorted/Parents">Parents</a>
+            <a href="/posts_sorted/Religion">Religion</a>
+            <a href="/posts_sorted/Financial">Financial</a>
+        </div>
 
 
+        <div id="posts">
+            <h1 class="posts-header">{% block header %}Posts{% endblock %}</h1>
+            {% for post in posts %}
+            <div class="card border-dark">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
+                    {% if post.consent %}
+                    <a class="fa-regular fa-handshake"></a>
+                    {% endif %}
 
-            <div>
-                                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-                <!--                <div class="likelen">{{ post.likes|length }}</div>-->
-                <span id="likes-count-{{post.id}}">
-        {{ post.likes|length }}</span>
-                {% if user.id in post.likes|map(attribute="author")|list %}
-                <a
-                        class="fas fa-heart"
-                        id="like-button-{{post.id}}"
-                        onclick="like({{post.id}})"
-                ></a>
-                {% else %}
-                <a
-                        class="far fa-heart"
-                        id="like-button-{{post.id}}"
-                        onclick="like({{post.id}})"
-                ></a>
-                {% endif %}
-                <!--     <ul class="special">
+
+
+                    <div>
+                        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+                        <!--                <div class="likelen">{{ post.likes|length }}</div>-->
+                        <span id="likes-count-{{post.id}}">
+                            {{ post.likes|length }}</span>
+                        {% if user.id in post.likes|map(attribute="author")|list %}
+                        <a class="fas fa-heart" id="like-button-{{post.id}}" onclick="like({{post.id}})"></a>
+                        {% else %}
+                        <a class="far fa-heart" id="like-button-{{post.id}}" onclick="like({{post.id}})"></a>
+                        {% endif %}
+                        <!--     <ul class="special">
                     <li><a href="/like-post/{{post.id}}" class="icon_class"></a></li>
                 </ul>-->
 
-            </div>
-        </div>
-        <div class="card-body">
-            <div href="/posts/{{post.browser}}" class="card-title">{{post.browser}}</div>
-            <a href="/posts_sorted/{{post.browser}}">See Other {{post.browser}} Posts <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div href="/posts/{{post.browser}}" class="card-title">{{post.browser}}</div>
+                    <a href="/posts_sorted/{{post.browser}}">See Other {{post.browser}} Posts <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
 
 
-        <div class="ex1" >{{ post.text }}</div>
+                    <div class="ex1">{{ post.text }}</div>
 
 
 
 
-            <br/>
-            <div class="collapse" id="comments-{{post.id}}">
-                   <form class="input-group mb-3 legacy-form" method="POST" action="/create-comment/{{post.id}}">
-                <input type="text" id="text" name="text" class="form-control" placeholder="Add a Comment"/>
-                <button type="submit" class="btn btn-comment">Comment</button>
-            </form>
-                <div class="card">
-                    <div class="card-body" id="comments-expanded-{{post.id}}">
-                        {% for comment in post.comments %}
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="comment-text">
-                                <a href="/posts/{{comment.user.username}}">{{comment.user.username}}</a>
-                                 {{comment.text}}
-                            </div>
-                            <div>
+                    <br />
+                    <div class="collapse" id="comments-{{post.id}}">
+                        <form class="input-group mb-3 legacy-form" method="POST" action="/create-comment/{{post.id}}">
+                            <input type="text" id="text" name="text" class="form-control" placeholder="Add a Comment" />
+                            <button type="submit" class="btn btn-comment">Comment</button>
+                        </form>
+                        <div class="card">
+                            <div class="card-body" id="comments-expanded-{{post.id}}">
+                                {% for comment in post.comments %}
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="comment-text">
+                                        <a href="/posts/{{comment.user.username}}">{{comment.user.username}}</a>
+                                        {{comment.text}}
+                                    </div>
+                                    <div>
 
-                                {% if user.id == comment.author or user.id == post.author %}
-                                    <a style="color:blue;" class="fas fa-trash-can" href="/delete-comment/{{comment.id}}"></a>
-                                {% endif %}
+                                        {% if user.id == comment.author or user.id == post.author %}
+                                        <a style="color:blue;" class="fas fa-trash-can"
+                                            href="/delete-comment/{{comment.id}}"></a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+
                             </div>
                         </div>
-                        {% endfor %}
 
                     </div>
+                    <p class="card-text">
+                        {% if post.comments|length >= 0 %}
+                        <small>{{post.comments|length}}</small>
+                        <a data-bs-toggle="collapse" class="fa-regular fa-comment" href="#comments-{{post.id}}"></a>
+                        {% else %}
+                        <small class="text-muted"> No Comments</small>
+                        {% endif %}
+                    </p>
+
+                </div>
+                <div class="card-footer text-muted">
+                    {{post.date_created}}
+                    {% if user.id == post.author or user.role == "admin" %}
+                    <a style="color: {{ 'green' if user.role == 'admin' else 'red'}};" class="fas fa-trash-can"
+                        href="/delete-post/{{post.id}}"></a>
+                    {% else %}
+                    <a style="color:red;" class="fas fa-flag" href="/report-post/{{post.id}}"></a>
+                    {% endif %}
                 </div>
 
             </div>
-            <p class="card-text">
-                {% if post.comments|length >= 0 %}
-                    <small>{{post.comments|length}}</small>
-                <a data-bs-toggle="collapse"
-                        class="fa-regular fa-comment"
-                        href="#comments-{{post.id}}"
-                ></a>
-                {% else %}
-                <small class="text-muted"> No Comments</small>
-                {% endif %}
-            </p>
+
+
+
+
+            {% endfor %}
+
+
+            {% block footer %}
 
         </div>
-        <div class="card-footer text-muted">
-            {{post.date_created}}
-            {% if user.id == post.author or user.role == "admin" %}
-                    <a style="color: {{ 'green' if user.role == 'admin' else 'red'}};"
-                        class="fas fa-trash-can"
-                        href="/delete-post/{{post.id}}"
-                ></a>
-            {% else %}
-            <a style="color:red;"
-                        class="fas fa-flag"
-                        href="/report-post/{{post.id}}"
-                ></a>
-            {% endif %}
+        <div align="center">
+            <a href="/create-post">
+                <button type="button" class="btn btn-main">
+                    Fill out Form
+                </button>
+            </a>
         </div>
+    </section>
 
-    </div>
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
 
-
-
-
-        {% endfor %}
-
-
-    {% block footer %}
-
-</div>
-    <div align="center">
-        <a href="/create-post">
-            <button type="button" class="btn btn-main">
-                Fill out Form
-            </button>
-        </a>
-    </div>
-</section>
-
-<script>
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
-}
-</script>
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 {% endblock %} {% endblock %}
-
-
