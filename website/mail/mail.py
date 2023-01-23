@@ -11,7 +11,6 @@ SENDER = "mail@sweat.io"
 
 def send_email(to, subject, content):
     """ Send email to user """
-    # this will send email to user
     msg = MIMEMultipart()
     msg['From'] = SENDER
     msg['To'] = to

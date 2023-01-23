@@ -150,7 +150,7 @@ def verify_email():
     verification = Verification.query.filter_by(token=token, intent="verify-email").first()
     if verification:
         user = User.query.filter_by(id=verification.user_id).first()
-        user.email_verified = True
+        user.email_confirmed = True
         db.session.delete(verification)
         db.session.commit()
         flash('Email verified!', category='success')
@@ -163,6 +163,8 @@ def is_human(captcha_response):
     """ Validating recaptcha response from google server
         Returns True captcha test passed for submitted form else returns False.
     """
+    if current_app.config['ENV'] == 'development':
+        return True
     secret = "6Lf2mcMhAAAAALsvyxebf4_d8gSHDE5ZkYa3hNpo"
     payload = {'response':captcha_response, 'secret':secret}
     response = requests.post("https://www.google.com/recaptcha/api/siteverify", payload)
