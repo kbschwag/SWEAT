@@ -1,10 +1,10 @@
 from flask import Flask
 from flask_login import LoginManager
-from routes.views import views
-from routes.auth import auth
-from routes.admin import admin
+from .routes.views import views
+from .routes.auth import auth
+from .routes.admin import admin
 from os import getenv
-from models import db, User
+from .models import db, User
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "helloworld"
@@ -13,10 +13,13 @@ app.config['SECRET_KEY'] = "helloworld"
 # Also chooses the domain to use for the app (localhost:5000 or sweat.io)
 if getenv('FLASK_ENV') == 'development':
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-    app.config['SERVER_NAME'] = 'localhost:5000'
+    app.config['SERVER_NAME'] = '127.0.0.1:5000'
+elif getenv('RDS_HOSTNAME'):
+    app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql://{getenv('RDS_USERNAME')}:{getenv('RDS_PASSWORD')}@{getenv('RDS_HOSTNAME')}:{getenv('RDS_PORT')}/{getenv('RDS_DB_NAME')}"
+    app.config['SERVER_NAME'] = getenv('HOST')
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')
-    app.config['SERVER_NAME'] = 'sweat.io'
+    app.config['SERVER_NAME'] = getenv('HOST')
 
 db.init_app(app)
 

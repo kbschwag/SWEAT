@@ -18,9 +18,9 @@ if getenv('FLASK_ENV') == 'development':
 
         mailer = DemoMailer()
 else:
-    mailer = smtplib.SMTP('smtp.gmail.com', 587)
+    mailer = smtplib.SMTP('email-smtp.us-east-1.amazonaws.com', 587)
     mailer.starttls()
-    mailer.auth('username', 'password')
+    # mailer.auth('username', 'password')
 
 SENDER = "mail@sweat.io"
 

@@ -1,11 +1,11 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash, current_app, json
-from models import db, User, Verification
+from ..models import db, User, Verification
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 import  re
 import requests
 import secrets
-from mail.mail import send_templated_email
+from ..mail.mail import send_templated_email
 
 auth = Blueprint("auth", __name__)
     

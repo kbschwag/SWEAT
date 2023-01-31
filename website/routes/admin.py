@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_required
-from models import Post, Report, User, db
+from ..models import Post, Report, User, db
 from os import getenv
 admin = Blueprint('admin', __name__)
 
