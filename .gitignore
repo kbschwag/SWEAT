@@ -2,8 +2,3 @@ venv
 __pycache__
 students.db
 instance
-
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
