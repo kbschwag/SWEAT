@@ -1532,6 +1532,7 @@ input[type="submit"]:hover {
   .service{
     width: 50%;
   }
+
 }
 @media screen and (max-width: 500px) {
   .service{
