@@ -2,6 +2,9 @@ branch-defaults:
   freelance-updates:
     environment: Sweatapp-env
     group_suffix: null
+  master:
+    environment: Sweatapp-env
+    group_suffix: null
 environment-defaults:
   Sweatapp-env:
     branch: null
