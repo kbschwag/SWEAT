@@ -41,7 +41,6 @@ def community_guidelines():
 
 
 @views.route("/contact-us")
-@login_required
 def contact():
     return render_template("contact-us.html", user=current_user)
 

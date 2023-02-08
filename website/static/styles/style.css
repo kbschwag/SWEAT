@@ -38,6 +38,7 @@ body {
   font-family: "Quicksand", sans-serif;
   -webkit-font-smoothing: antialiased;
   background-color: #000;
+  overflow-x: hidden;
 
 }
 
@@ -252,9 +253,9 @@ a:focus,
   margin-bottom: 100px;
 }
 
-/*--
-    custom heading
---*/
+.home-banner-inner h1{
+    font-size: 60px;
+}
 .text-center {
   text-align: center;
 }
@@ -287,7 +288,7 @@ section.home-banner {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url('/static/images/foot.jpg')}});
-
+    overflow: hidden;
     transition: all 0.9s ease 0s;
     transition-property: all;
     transition-duration: 0.9s;
@@ -406,10 +407,6 @@ section.about2-banner {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.community-guidelines {
-    padding-top: 100px;
 }
 
 .subheading {
@@ -1031,7 +1028,12 @@ section.feature-list {
         min-height: auto;
         margin-left: 0;
     }
-
+    .home-cmn-sec {
+        padding: 10px;
+    }
+    .review{
+    font-size: 12px;
+}
     .resource{
         width: 50%;
         margin: auto;
@@ -1047,6 +1049,23 @@ section.feature-list {
         width: 100%;
         min-height: auto;
         margin-left: 0;
+    }
+
+
+    .home-banner {
+        background-attachment: fixed;
+    }
+    .about2-banner {
+        background-attachment: fixed;
+    }
+    .resources {
+        background-attachment: fixed;
+    }
+    .about-banner {
+        background-attachment: fixed;
+    }
+    .solutions-banner {
+        background-attachment: fixed;
     }
 }
 
@@ -1207,7 +1226,6 @@ footer p.copyright-text a:hover {
 .form-control {
     width: 100%;
     margin: auto;
-
     padding: 1rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -1312,12 +1330,10 @@ form.legacy-form {
     box-shadow: #fff;
     border: solid;
     color: #000;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
-.signup {
-    margin-top: 100px !important;
-}
+
 
 #login
 {
@@ -1336,8 +1352,6 @@ form.legacy-form {
    color:#000;
    font-size: 15;
 }
-
-
 
 .voice{
     padding-top: 100px;
@@ -1534,6 +1548,7 @@ input[type="submit"]:hover {
   .service{
     width: 50%;
   }
+
 }
 @media screen and (max-width: 500px) {
   .service{
