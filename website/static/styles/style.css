@@ -65,7 +65,7 @@ h6 {
 
 h1 {
     letter-spacing: 0.3em;
-     font-size: 40px;
+     font-size: 50px;
      color: #A58C50;
 }
 
@@ -224,6 +224,15 @@ a:focus,
 .container {
     width: 100%!important;
 
+}
+
+.logo {
+    background-image: url('/static/images/logo.png')}});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 200px;
 }
 
 
@@ -1542,6 +1551,15 @@ input[type="submit"]:hover {
   color: gray;
   font-size: 15px;
   font-weight: 500;
+}
+
+.service-img {
+     background-image: url('/static/images/s.png')}});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
 }
 
 @media screen and (max-width: 800px) {
