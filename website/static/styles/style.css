@@ -304,6 +304,7 @@ section.home-banner {
     transition-duration: 0.9s;
     transition-timing-function: ease;
     transition-delay: 0s;
+    overflow-x: hidden;
 }
 
 .banner-content {
@@ -324,6 +325,7 @@ section.solutions-banner {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("/static/images/swimming.jpg");
+    overflow-x: hidden;
 }
 
 section.contactus-banner {
@@ -335,6 +337,7 @@ section.contactus-banner {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("/static/images/sad.jpg");
+    overflow-x: hidden;
 }
 
 .solutions-banner-inner {
@@ -388,6 +391,7 @@ section.about-banner {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("/static/images/home.jpg");
+    overflow-x: hidden;
 }
 
 .about-banner-inner {
@@ -413,6 +417,7 @@ section.about2-banner {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 
@@ -642,7 +647,7 @@ section.feature-list {
     transition-duration: 0.9s;
     transition-timing-function: ease;
     transition-delay: 0s;
-
+    overflow-x: hidden;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1072,7 +1077,10 @@ section.feature-list {
         margin-left: 0;
     }
 
-
+    #resources {
+    height: 110vh;
+    background-attachment: unset;
+    }
     section.home-banner {
         background-attachment: unset;
     }
