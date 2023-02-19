@@ -1359,7 +1359,6 @@ form.legacy-form {
     box-shadow: #fff;
     border: solid;
     color: #000;
-    margin-top: 100px;
 }
 
 
@@ -1687,7 +1686,7 @@ input[type="submit"]:hover {
     display: grid;
     grid-template-columns: auto auto;
     text-align: center;
-    grid-gap: 10px;
+    grid-gap: 30px;
     height: 100vh;
     margin: 0 auto;
   }
@@ -1711,7 +1710,7 @@ input[type="submit"]:hover {
   
   .flip-box img {
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
