@@ -19,7 +19,7 @@ html, body, {
 
 .ml4 {
   position: relative;
-  font-size: 4.5em;
+  font-size: 3.5em;
 }
 .ml4 .letters {
   position: absolute;
@@ -308,6 +308,11 @@ section.home-banner {
 
 .banner-content {
     padding: 48px 0;
+    padding-bottom: 30px;
+}
+
+.home-sentence h2{
+    font-size: 14px;
 }
 
 section.solutions-banner {
