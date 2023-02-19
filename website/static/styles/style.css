@@ -227,7 +227,7 @@ a:focus,
 }
 
 .logo {
-    background-image: url('/static/images/logo.png')}});
+    background-image: url('/static/images/white.png')}});
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -273,6 +273,7 @@ a:focus,
   text-align: center;
   color: #70ABAF !important;
   padding-bottom: 25px;
+  padding-top: 25px;
 }
 
 .heading h2 {
@@ -314,7 +315,7 @@ section.home-banner {
 }
 
 section.solutions-banner {
-    height: 100vh;
+    height: 120vh;
     width: 100%;
     position: relative;
     background-attachment: fixed;
@@ -323,6 +324,18 @@ section.solutions-banner {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("/static/images/swimming.jpg");
+}
+
+section.contactus-banner {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-attachment: fixed;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/static/images/sad.jpg");
 }
 
 .solutions-banner-inner {
@@ -1042,7 +1055,7 @@ section.feature-list {
     }
     .review{
     font-size: 12px;
-}
+    }
     .resource{
         width: 50%;
         margin: auto;
@@ -1062,19 +1075,19 @@ section.feature-list {
 
 
     .home-banner {
-        background-attachment: fixed;
+        background-attachment: unset;
     }
     .about2-banner {
-        background-attachment: fixed;
+        background-attachment: unset;
     }
     .resources {
-        background-attachment: fixed;
+        background-attachment: unset;
     }
     .about-banner {
-        background-attachment: fixed;
+        background-attachment: unset;
     }
     .solutions-banner {
-        background-attachment: fixed;
+        background-attachment: unset;
     }
 }
 
@@ -1085,7 +1098,7 @@ section.feature-list {
 	position: absolute;
 	width: 110px;
 	height: 100%;
-	background: #ff6a001f;
+	background: #ff6a00;
 	border-radius: 30px;
 	transition: .5s;
 }
@@ -2021,7 +2034,9 @@ hr {
   .direct-contact-container, .form-horizontal {
     margin: 0 auto;
   }
-  
+  .contact-text {
+  font-size: 12px;
+}
   .direct-contact-container {
     margin-top: 60px;
     max-width: 300px;
