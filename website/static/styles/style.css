@@ -311,8 +311,8 @@ section.home-banner {
     padding-bottom: 30px;
 }
 
-.home-sentence h2{
-    font-size: 14px;
+.home-sentence{
+    padding-top: 50px;
 }
 
 section.solutions-banner {
