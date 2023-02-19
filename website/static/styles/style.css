@@ -250,7 +250,7 @@ a:focus,
     display: grid !important;
     grid-template-columns: auto !important;
     text-align: center;
-    height: 250vh !important;
+    height: 150vh !important;
 }
 }
 
@@ -306,19 +306,14 @@ section.home-banner {
     transition-delay: 0s;
 }
 
-section.home-banner {
-    background-attachment: scroll;
-}
-
 .banner-content {
     padding: 48px 0;
 }
 
 section.solutions-banner {
-    height: 120vh;
+    height: 100vh;
     width: 100%;
     position: relative;
-    background-attachment: fixed;
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
@@ -327,10 +322,9 @@ section.solutions-banner {
 }
 
 section.contactus-banner {
-    height: 100vh;
+    height: 120vh;
     width: 100%;
     position: relative;
-    background-attachment: fixed;
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1074,19 +1068,19 @@ section.feature-list {
     }
 
 
-    .home-banner {
+    section.home-banner {
         background-attachment: unset;
     }
-    .about2-banner {
+    section.about2-banner {
         background-attachment: unset;
     }
-    .resources {
+    section.resources {
         background-attachment: unset;
     }
-    .about-banner {
+    section.about-banner {
         background-attachment: unset;
     }
-    .solutions-banner {
+    section.solutions-banner {
         background-attachment: unset;
     }
 }
