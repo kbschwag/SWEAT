@@ -317,7 +317,7 @@ section.home-banner {
 }
 
 section.solutions-banner {
-    height: 100vh;
+    height: 80vh;
     width: 100%;
     position: relative;
     background-attachment: fixed;
