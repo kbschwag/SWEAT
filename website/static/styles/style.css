@@ -1213,26 +1213,21 @@ section.feature-list {
   display: table-cell;
 }
 
-.footer-menu a {
-  font-size: 14;
-  font-weight: 700;
-  color: #fff;
-  padding: 10px;
-}
 footer {
   background-color: #333;
   color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 20px;
+  font-size: 16px;
+  margin-top: 50px;
 }
 
 .site-links a,
-.contact-us a,
 .social-media-icons a {
   color: #fff;
-  margin-right: 10px;
+  margin-right: 20px;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .fa {
@@ -1241,28 +1236,35 @@ footer {
 
 p {
   margin: 0;
+  text-align: center;
 }
 
-.site-links,
-.contact-us,
+.site-links {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-us {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .social-media-icons {
   display: flex;
+  justify-content: center;
 }
 
-.site-links a,
-.contact-us a {
-  font-size: 14px;
-  text-decoration: none;
-  margin-right: 20px;
+.col-md-4 {
+  width: 33.33%;
 }
 
-.social-media-icons a {
-  font-size: 20px;
-  text-decoration: none;
-}
-
-.contact-us a {
-  font-weight: bold;
+@media (max-width: 767px) {
+  .col-md-4 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 /* Login acount style.*/
 
