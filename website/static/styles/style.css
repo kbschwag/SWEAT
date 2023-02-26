@@ -73,6 +73,7 @@ h1 {
 }
 h4 {
     color: #FFFFFF;
+
 }
 
 h5 {
@@ -250,7 +251,7 @@ a:focus,
     display: grid !important;
     grid-template-columns: auto !important;
     text-align: center;
-    height: 150vh !important;
+    height: 200vh !important;
 }
 }
 
@@ -391,7 +392,6 @@ section.about-banner {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("/static/images/home.jpg");
-    overflow-x: hidden;
 }
 
 .about-banner-inner {
@@ -1219,32 +1219,50 @@ section.feature-list {
   color: #fff;
   padding: 10px;
 }
-
 footer {
-  text-align: center;
-  background: #f4f4f4;
-  padding: 50px 0px;
-}
-
-footer .footer-logo {
+  background-color: #333;
   color: #fff;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
-footer p.copyright-text {
-  font-weight: 300;
-  font-size: 12px;
-  color: #ffffff;
-  letter-spacing: 3px;
-  margin-top: 15px;
-}
-
-footer p.copyright-text a {
+.site-links a,
+.contact-us a,
+.social-media-icons a {
   color: #fff;
+  margin-right: 10px;
 }
 
-footer p.copyright-text a:hover {
+.fa {
+  font-size: 24px;
+}
+
+p {
+  margin: 0;
+}
+
+.site-links,
+.contact-us,
+.social-media-icons {
+  display: flex;
+}
+
+.site-links a,
+.contact-us a {
+  font-size: 14px;
   text-decoration: none;
+  margin-right: 20px;
+}
+
+.social-media-icons a {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.contact-us a {
+  font-weight: bold;
 }
 /* Login acount style.*/
 
@@ -1932,7 +1950,7 @@ input[type="submit"]:hover {
 }
 
 .gmail {
-  margin-left: 53px;
+  margin-left: 10px;
 }
 
 .contact-text a {
