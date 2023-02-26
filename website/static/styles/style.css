@@ -1219,6 +1219,7 @@ footer {
   padding: 20px;
   font-size: 16px;
   margin-top: 50px;
+  z-index: 10;
 }
 
 .site-links a,
