@@ -243,7 +243,7 @@ a:focus,
   padding: 100px 0;
 }
 
-@media (max-device-width: 800px) {
+@media (max-width: 800px) {
   .font-size-60 {
     font-size: 40px;
   }
@@ -1039,7 +1039,7 @@ section.feature-list {
 }
 
 
-@media (max-width: 800px){
+@media (max-device-width: 800px){
     .testimonial{
         width: 50%;
         margin: auto;
