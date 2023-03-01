@@ -684,8 +684,8 @@ section.feature-list {
 }
 
 .gallery .block:hover .gallery-overlay {
-  -webkit-transform: scale(.05);
-          transform: scale(.05);
+  -webkit-transform: scale(1);
+          transform: scale(1);
   opacity: 1;
 }
 
@@ -698,8 +698,8 @@ section.feature-list {
   background: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   color: inherit;
-  -webkit-transform: scale(0.5);
-  transform: scale(0.5);
+  -webkit-transform: scale(0.01);
+  transform: scale(0.01);
   transition: all .3s;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
