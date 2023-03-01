@@ -32,6 +32,7 @@ html, body, {
   right: 0;
   opacity: 0;
   color: #F0F7F4;
+  overflow-x: hidden;
 }
 body {
   font-size: 14px;
