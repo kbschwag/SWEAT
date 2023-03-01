@@ -315,6 +315,7 @@ section.home-banner {
     padding: 48px 0;
     padding-bottom: 30px;
     overflow-x: hidden;
+    background-color: red;
 }
 
 .home-sentence{
