@@ -317,7 +317,7 @@ section.home-banner {
     overflow-x: hidden;
     background-color: red;
     width: 100%;
-    height: auto;
+    height: 200px;
 }
 
 .home-sentence{
