@@ -684,8 +684,8 @@ section.feature-list {
 }
 
 .gallery .block:hover .gallery-overlay {
-  -webkit-transform: scale(.25);
-          transform: scale(.25);
+  -webkit-transform: scale(.05);
+          transform: scale(.05);
   opacity: 1;
 }
 
