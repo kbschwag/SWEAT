@@ -16,11 +16,12 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '3.11'
+          cache: 'pip'
 
       - name: Install EB CLI
         run: |
           python -m pip install --upgrade pip
-          pip install awsebcli
+          pip install awsebcli==3.20.3
 
       - name: Deploy to EBS
         run: |
