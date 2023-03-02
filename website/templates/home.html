@@ -327,36 +327,37 @@ information for social media use: httns//www.stevefundora/crisisteytline.</p>
 
 <script>
 
-const wrapper = document.querySelector('.wrapper');
-const indicators = [...document.querySelectorAll('.indicators button')];
 
-let currentTestimonial = 0; // Default 0
-
-indicators.forEach((item, i) => {
-    item.addEventListener('click', () => {
-        indicators[currentTestimonial].classList.remove('active');
-        wrapper.style.marginLeft = `-${100 * i}%`;
-        item.classList.add('active');
-        currentTestimonial = i;
-    })
-})
-
-const wrapper1 = document.querySelector('.wrapper1');
-const indicators2 = [...document.querySelectorAll('.indicators2 button')];
-
-let currentTestimonial2 = 0; // Default 0
-
-indicators2.forEach((item, i) => {
-    item.addEventListener('click', () => {
-        indicators2[currentTestimonial2].classList.remove('active');
-        wrapper1.style.marginLeft = `-${100 * i}%`;
-        item.classList.add('active');
-        currentTestimonial2 = i;
-    })
-})
 
 function myFunction(x) {
   if (x.matches) { // If media query matches
+      const wrapper = document.querySelector('.wrapper');
+    const indicators = [...document.querySelectorAll('.indicators button')];
+
+    let currentTestimonial = 0; // Default 0
+
+    indicators.forEach((item, i) => {
+        item.addEventListener('click', () => {
+            indicators[currentTestimonial].classList.remove('active');
+            wrapper.style.marginLeft = `-${100 * i}%`;
+            item.classList.add('active');
+            currentTestimonial = i;
+        })
+    })
+
+    const wrapper1 = document.querySelector('.wrapper1');
+    const indicators2 = [...document.querySelectorAll('.indicators2 button')];
+
+    let currentTestimonial2 = 0; // Default 0
+
+    indicators2.forEach((item, i) => {
+        item.addEventListener('click', () => {
+            indicators2[currentTestimonial2].classList.remove('active');
+            wrapper1.style.marginLeft = `-${100 * i}%`;
+            item.classList.add('active');
+            currentTestimonial2 = i;
+        })
+    })
     var ml4 = {};
     ml4.opacityIn = [0,1];
     ml4.scaleIn = [0.2, 1];
@@ -441,6 +442,33 @@ anime.timeline({loop: true})
     delay: 500
   })
   } else {
+        const wrapper = document.querySelector('.wrapper');
+    const indicators = [...document.querySelectorAll('.indicators button')];
+
+    let currentTestimonial = 0; // Default 0
+
+    indicators.forEach((item, i) => {
+        item.addEventListener('click', () => {
+            indicators[currentTestimonial].classList.remove('active');
+            wrapper.style.marginLeft = `-${100 * i}%`;
+            item.classList.add('active');
+            currentTestimonial = i;
+        })
+    })
+
+    const wrapper1 = document.querySelector('.wrapper1');
+    const indicators2 = [...document.querySelectorAll('.indicators2 button')];
+
+    let currentTestimonial2 = 0; // Default 0
+
+    indicators2.forEach((item, i) => {
+        item.addEventListener('click', () => {
+            indicators2[currentTestimonial2].classList.remove('active');
+            wrapper1.style.marginLeft = `-${100 * i}%`;
+            item.classList.add('active');
+            currentTestimonial2 = i;
+        })
+    })
     var ml4 = {};
     ml4.opacityIn = [0,1];
     ml4.scaleIn = [0.2, 1];
