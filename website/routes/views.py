@@ -45,7 +45,7 @@ def contact():
     return render_template("contact-us.html", user=current_user)
 
 @views.route("/awesomeCoaches")
-def contact():
+def awesomeCoaches():
     return render_template("awesomeCoaches.html", user=current_user)
 
 
