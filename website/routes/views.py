@@ -44,6 +44,10 @@ def community_guidelines():
 def contact():
     return render_template("contact-us.html", user=current_user)
 
+@views.route("/awesomeCoaches")
+def contact():
+    return render_template("awesomeCoaches.html", user=current_user)
+
 
 @views.route("/view_posts/", methods=["GET"])
 @login_required
