@@ -29,6 +29,11 @@ def home():
 def about():
     return render_template("about_us.html", user=current_user)
 
+@views.route("/survey/")
+def survey():
+    return render_template("survey.html", user=current_user)
+
+
 
 @views.route("/terms")
 def terms():
@@ -51,11 +56,6 @@ def view_posts():
     posts = Post.query.order_by(Post.date_created.desc()).all()
     print(posts)
     return render_template("view_posts.html", user=current_user, posts=posts)
-
-
-@views.route("/survey/")
-def survey():
-    return render_template("survey.html", user=current_user)
 
 
 # get post is how we input data into the back end
