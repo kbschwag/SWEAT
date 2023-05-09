@@ -39,6 +39,23 @@ def survey():
 def terms():
     return render_template("terms.html", user=current_user)
 
+@app.route('/coach_appreciation', methods=["GET","POST"])
+@login_required
+def coach_appreciation():
+    form = ContactForm()
+    # here, if the request type is a POST we get the data on contat
+    #forms and save them else we return the contact forms html page
+    if request.method == 'POST':
+        name =  request.form["name"]
+        email = request.form["email"]
+        subject = request.form["subject"]
+        message = request.form["message"]
+        res = pd.DataFrame({'name':name, 'email':email, 'subject':subject ,'message':message}, index=[0])
+        res.to_csv('./contactusMessage.csv')
+        print("The data are saved !")
+    else:
+        return render_template('coach_appreciation.html', form=form)
+
 
 @views.route("/community_guidelines")
 def community_guidelines():
