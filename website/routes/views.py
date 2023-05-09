@@ -54,7 +54,7 @@ def coach_appreciation():
         res.to_csv('./contactusMessage.csv')
         print("The data are saved !")
     else:
-        return render_template('coach_appreciation.html', form=form)
+        return render_template('coach_appreciation.html', user=current_user, form=form)
 
 
 @views.route("/community_guidelines")
