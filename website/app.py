@@ -1,10 +1,10 @@
 from flask import Flask
 from flask_login import LoginManager
-from routes.views import views
-from routes.auth import auth
-from routes.admin import admin
+from .routes.views import views
+from .routes.auth import auth
+from .routes.admin import admin
 from os import getenv
-from models import db, User
+from .models import db, User
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "helloworld"
