@@ -7,8 +7,6 @@ from ..models import Post, User, Comment, Like, Browsers, Consents, Report, db
 from markupsafe import Markup
 from jinja2.utils import markupsafe
 from datetime import datetime, timedelta
-from ..forms import ContactForm
-
 markupsafe.Markup()
 Markup('')
 # from jinja2 import Markup
