@@ -3,7 +3,6 @@ from flask_login import LoginManager
 from .routes.views import views
 from .routes.auth import auth
 from .routes.admin import admin
-from .routes.forms import forms
 from os import getenv
 from .models import db, User
 
