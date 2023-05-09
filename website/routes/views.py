@@ -7,6 +7,10 @@ from ..models import Post, User, Comment, Like, Browsers, Consents, Report, db
 from markupsafe import Markup
 from jinja2.utils import markupsafe
 from datetime import datetime, timedelta
+from flask import Flask, render_template
+from forms import ContactForm
+from flask import request
+import pandas as pd
 markupsafe.Markup()
 Markup('')
 # from jinja2 import Markup
