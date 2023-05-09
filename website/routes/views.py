@@ -7,7 +7,7 @@ from ..models import Post, User, Comment, Like, Browsers, Consents, Report, db
 from markupsafe import Markup
 from jinja2.utils import markupsafe
 from datetime import datetime, timedelta
-from forms import ContactForm
+from ..forms import ContactForm
 import pandas as pd
 markupsafe.Markup()
 Markup('')
