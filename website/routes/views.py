@@ -8,7 +8,7 @@ from markupsafe import Markup
 from jinja2.utils import markupsafe
 from datetime import datetime, timedelta
 from ..forms import ContactForm
-import pandas as pd
+
 markupsafe.Markup()
 Markup('')
 # from jinja2 import Markup
