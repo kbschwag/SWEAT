@@ -39,7 +39,7 @@ def survey():
 def terms():
     return render_template("terms.html", user=current_user)
 
-@views.route('/coach_appreciation', methods=["GET","POST"])
+@views.route('/coach/', methods=["GET","POST"])
 @login_required
 def coach_appreciation():
     form = ContactForm()
