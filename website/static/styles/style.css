@@ -1279,7 +1279,6 @@ p {
   display: none;
 }
 .form-control {
-    width: 100%;
     margin: auto;
     padding: 1rem 0.75rem;
     font-size: 1rem;
