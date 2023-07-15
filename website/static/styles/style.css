@@ -1377,6 +1377,7 @@ p {
 }
 
 form.legacy-form {
+    width: 60%;
     padding: 20px;
     background-color: #FFF;
     margin: auto;
