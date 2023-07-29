@@ -66,6 +66,9 @@ def community_guidelines():
 def contact():
     return render_template("contact-us.html", user=current_user)
 
+@views.route("/shop")
+def shop():
+    return render_template("shop.html", user=current_user)
 
 @views.route("/view_posts/", methods=["GET"])
 @login_required
