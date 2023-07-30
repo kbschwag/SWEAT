@@ -17,6 +17,7 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'
+          node-version: '16'
 
       - name: Install EB CLI
         run: |
