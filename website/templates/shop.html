@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}Questions{% endblock %}
+{% extends "base.html" %} {% block title %}Home{% endblock %}
 {% block content%}
 
 
@@ -6,52 +6,51 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SIP</title>
+    <title>Tell SWEAT</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Shop</title>
-
     <!-- Importing fonts -->
     <!-- Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400i|Source+Sans+Pro:300,400,600,700"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
     <!-- Importing CSSs -->
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/owl-carousel/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/magnific-popup/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
-    <script src="{{url_for('static', filename='main.js')}}"></script>
+
 
 </head>
-<body>
 
-<script>
-var acc = document.getElementsByClassName("accordion");
-var i;
+<body id="body">
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  });
-}
-</script>
+    <!-- Main body -->
 
-    <footer>
+<section class="lazyload solutions-banner"> <div class="home-banner-inner">
+
+        <div class="container">
+
+            <h1 align=center">Student Athlete Survey</h1>
+
+            <br>
+                <h4>The quiz below is another way for us to understand our users, please answer these questions honestly. The feedback will be open, so you can see the results too!</h4>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+<footer>
   <div class="site-links">
     <a href="/about_us">About Us</a>
     <a href="/terms">Terms & Conditions</a>
-    <a href="/sign-up">Sign Up</a>
-    <a href="/contact-us">Contact Us</a>
+    <a href="/signup">Sign Up</a>
+    <a href="/contactus">Contact Us</a>
   </div>
   <div class="social-media-icons">
     <a href="https://www.tiktok.com/@tellsweat"><i class="fa-brands fa-tiktok"></i></a>
@@ -60,9 +59,6 @@ for (i = 0; i < acc.length; i++) {
   </div>
   <p>Copyright © 2023 Students Working to End Athletic Trauma. All rights reserved.</p>
 </footer>
-
 </body>
-
-
 </html>
 {% endblock %}
