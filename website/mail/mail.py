@@ -4,7 +4,7 @@ from os import getenv
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-# this will connect to email server when decided
+# this will connect to email server when decided!
 def get_mailer():
     if getenv('FLASK_ENV') == 'development':
         try:
