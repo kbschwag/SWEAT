@@ -20,7 +20,7 @@ jobs:
 
       - name: Install EB CLI
         run: |
-          python3 -m pip install --upgrade pip
+          python -m pip install --upgrade pip
           pip install awsebcli==3.20.3
 
       - name: Deploy to EBS
