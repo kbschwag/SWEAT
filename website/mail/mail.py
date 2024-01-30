@@ -5,6 +5,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 # this will connect to email server when decided
+#test on main branch
 if getenv('FLASK_ENV') == 'development':
     try:
         mailer = smtplib.SMTP('localhost', 1025)
